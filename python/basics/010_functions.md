@@ -1,96 +1,102 @@
 # 🧩 010: Creating Reusable Code with Functions
 
-So far, we've been writing scripts that run from top to bottom. But what if you need to perform the same action multiple times? For example, greeting a user. You could copy and paste `print("Hello, user!")`, but if you need to change the message, you'd have to change it everywhere. This is where **functions** come in.
+Functions are Python's reusable, named blocks of code. They let you organize logic, avoid repetition, and build modular, maintainable programs. Functions can take parameters, return values, and support flexible argument patterns. Mastering functions is key to writing clean, professional Python code.
 
-A function is a named, reusable block of code that performs a specific task. Think of it as a recipe: you define it once, and you can use it as many times as you want.
+## 🎯 Python Function: Practical, Tricky, and Fun Usages
 
----
-
-## 🤔 What Is a Function?
-
-A function is a self-contained block of code that you can "call" by name to execute it. Functions can optionally take in data (as **parameters**) and send data back (as a **return value**).
-
-Here's a simple function that greets a person:
 ```python
-# --- Function Definition ---
+# ===== 1. Basic Definition & Calling =====
 def greet(name):
-  """This function takes a name and prints a greeting."""
-  print(f"Hello, {name}! Welcome to the world of functions. 👋")
-
-# --- Calling the Function ---
+  print(f"Hello, {name}!")
 greet("Alice")
-greet("Bob")
-```
-We defined the `greet` logic once and called it twice with different data.
 
-## ✨ Why Are Functions So Important?
-
-Functions are a cornerstone of well-written code. They allow you to practice the **DRY** principle: **D**on't **R**epeat **Y**ourself.
-
-*   **Reusability:** Write a piece of logic once and use it anywhere in your application.
-*   **Modularity:** Break down a large, complex program into smaller, manageable, and understandable pieces. It's easier to work on `calculate_tax()` than a giant script that does everything.
-*   **Abstraction:** You don't need to know *how* a function works to use it. You just need to know its name and what inputs it needs. The `print()` function is a perfect example—you use it all the time without needing to know the complex details of how it displays text on the screen.
-*   **Maintainability:** If you need to fix a bug or update logic, you only have to do it in one place: inside the function.
-
----
-
-## 🚀 How Do I Build Functions?
-
-Let's explore the key components of building and using functions.
-
-### 1. Parameters vs. Arguments
-
-This is a common point of confusion, but the distinction is simple:
-*   **Parameter:** The variable listed inside the function's parentheses during definition (e.g., `name` in `def greet(name):`). It's a placeholder.
-*   **Argument:** The actual value that is sent to the function when it is called (e.g., `"Alice"` in `greet("Alice")`). It's the real data.
-
-### 2. Return Values: Getting Data Back
-
-Many functions perform a calculation and need to send a result back. The `return` statement does this. When `return` is executed, the function stops immediately and sends the value back to where it was called.
-
-```python
+# ===== 2. Return Values =====
 def add(a, b):
-  """This function adds two numbers and returns the result."""
-  result = a + b
-  return result
+  return a + b
+print(add(2, 3))
 
-# The value returned by the function is stored in the 'sum_result' variable
-sum_result = add(5, 3)
-print(f"The sum is: {sum_result}") # The sum is: 8
+# ===== 3. Parameters & Arguments =====
+def welcome(name="World"):
+  print(f"Welcome, {name}!")
+welcome()
+welcome("Bob")
+
+# ===== 4. Positional, Keyword, Default =====
+def show(a, b=10, c=20):
+  print(a, b, c)
+show(1)
+show(1, c=99)
+
+# ===== 5. *args and **kwargs =====
+def demo(*args, **kwargs):
+  print(args, kwargs)
+demo(1, 2, 3, x=4, y=5)
+
+# ===== 6. Multiple Returns & Unpacking =====
+def stats(lst):
+  return min(lst), max(lst), sum(lst)
+lo, hi, total = stats([1, 2, 3])
+print(lo, hi, total)
+
+# ===== 7. Nested Functions & Closures =====
+def outer(x):
+  def inner(y):
+    return x + y
+  return inner
+f = outer(10)
+print(f(5))
+
+# ===== 8. Lambda & Anonymous Functions =====
+add_one = lambda x: x + 1
+print(add_one(7))
+print(list(map(lambda x: x**2, [1,2,3])))
+
+# ===== 9. Docstrings & Annotations =====
+def foo(x: int) -> int:
+  """Returns x squared."""
+  return x * x
+print(foo.__doc__, foo(4))
+
+# ===== 10. Scope & Globals =====
+val = 10
+def change():
+  global val
+  val = 99
+change()
+print(val)
+
+# ===== 11. Common Pitfalls =====
+def risky(val, lst=[]):
+  lst.append(val)
+  return lst
+print(risky(1), risky(2))
+
+# ===== 12. Decorators (Preview) =====
+def simple_decorator(fn):
+  def wrapper(*args, **kwargs):
+    print("Before call")
+    result = fn(*args, **kwargs)
+    print("After call")
+    return result
+  return wrapper
+@simple_decorator
+def hello():
+  print("Hello!")
+hello()
+
+# ===== 13. Fun Tricks =====
+def palindrome(s):
+  return s == s[::-1]
+print(palindrome("level"))
+
+# Recursive function
+def factorial(n):
+  return 1 if n==0 else n*factorial(n-1)
+print(factorial(5))
+
+# ===== 14. Function as First-Class Citizens =====
+def apply_func(f, value):
+  return f(value)
+print(apply_func(lambda x: x**2, 6))
+
 ```
-A function with no `return` statement implicitly returns `None`.
-
-### 3. Different Types of Arguments
-
-You can define arguments in several flexible ways:
-
-*   **Positional Arguments:** The standard arguments that are matched based on their position. `add(5, 3)`
-*   **Keyword Arguments:** You specify the argument by its parameter name, so the order doesn't matter. `add(b=3, a=5)`
-*   **Default Arguments:** You can provide a default value for a parameter, making it optional when the function is called.
-
-    ```python
-    def greet(name="World"):
-      print(f"Hello, {name}!")
-
-    greet()       # Prints "Hello, World!"
-    greet("Alice") # Prints "Hello, Alice!"
-    ```
-
-### 4. Advanced: `*args` and `**kwargs`
-
-What if you don't know how many arguments will be passed to your function?
-
-*   `*args`: Collects all extra positional arguments into a **tuple**.
-*   `**kwargs`: Collects all extra keyword arguments into a **dictionary**.
-
-```python
-def show_everything(*args, **kwargs):
-  print(f"Positional arguments (a tuple): {args}")
-  print(f"Keyword arguments (a dictionary): {kwargs}")
-
-show_everything(1, 2, "hello", name="Alice", age=30)
-# Positional arguments (a tuple): (1, 2, 'hello')
-# Keyword arguments (a dictionary): {'name': 'Alice', 'age': 30}
-```
-
-By mastering functions, you take a massive leap from just writing scripts to building well-structured, professional-grade programs.
