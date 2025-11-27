@@ -6,104 +6,51 @@ These UDS messages are typically sent over a CAN bus using a transport protocol 
 
 ---
 
-## 🤔 What Is `udsoncan`?
-
-`udsoncan` is a Python implementation of the UDS protocol. It allows you to write scripts that act as a diagnostic "client" (like a mechanic's scan tool) to communicate with an ECU "server." It abstracts away the byte-level details of constructing service requests and parsing responses.
-
-## ✨ Why Is `udsoncan` So Useful?
-
-*   **It Implements the Standard:** It provides a comprehensive implementation of the UDS services, saving you from having to read the entire ISO standard and implement it from scratch.
-*   **Simplifies Complex Operations:** Tasks like unlocking a security-protected ECU, which involve a multi-step seed-and-key exchange, are handled by the library.
-*   **Built for Automation:** It's designed for writing automated diagnostic test scripts, which are essential for validating ECU software.
-*   **Works with `python-can`:** It integrates directly with the `python-can` library, allowing you to use it with a wide variety of CAN hardware interfaces.
-
----
-
-## 🚀 How Do I Use `udsoncan`?
-
-Let's walk through a typical diagnostic session workflow.
-
-### 1. Installation
-
-You'll need `udsoncan` and a transport layer library like `python-can-isotp`.
-```bash
-pip install udsoncan python-can python-can-isotp
-```
-
-### 2. Setting Up the Connection
-
-First, you need to establish the communication stack. This involves creating a `python-can` bus object and then wrapping it in an ISO-TP connection object.
+## 🎯 udsoncan: Practical, Tricky, and Fun Usages
 
 ```python
-import can
-import isotp
+# ===== 1. Install udsoncan =====
+# pip install udsoncan python-can python-can-isotp
+
+# ===== 2. Setup CAN and ISO-TP Connection =====
+import can, isotp
 from udsoncan.connections import PythonIsoTpConnection
-
-# 1. Create the python-can bus object (hardware interface)
-# Replace with your actual hardware interface
 bus = can.interface.Bus(bustype='socketcan', channel='vcan0', bitrate=500000)
-
-# 2. Define the ISO-TP addresses for the client and ECU
-# The client sends to the ECU's request ID (e.g., 0x7E0)
-# and listens on the ECU's response ID (e.g., 0x7E8)
-tp_address = isotp.Address(
-    addressing_mode=isotp.AddressingMode.Normal_11bits,
-    txid=0x7E0, # ECU Request ID
-    rxid=0x7E8  # ECU Response ID
-)
-
-# 3. Create the ISO-TP connection
-# This handles breaking down long messages into multiple CAN frames
-stack = isotp.CanStack(bus=bus, address=tp_address)
+tp_addr = isotp.Address(addressing_mode=isotp.AddressingMode.Normal_11bits, txid=0x7E0, rxid=0x7E8)
+stack = isotp.CanStack(bus=bus, address=tp_addr)
 conn = PythonIsoTpConnection(stack)
-```
 
-### 3. Using the UDS Client
-
-The `Client` object is your main tool for interacting with the ECU. The `with` statement is recommended as it ensures the connection is properly closed.
-
-Let's perform a common sequence: change session, unlock security, and read a protected data identifier.
-
-```python
+# ===== 3. UDS Client Session =====
 from udsoncan.client import Client
-from udsoncan.services import * # Import all UDS services
-import time
-
-# The client needs the connection object and a config dictionary
-# The config tells the client how to handle certain services, like security access
-client_config = {
-  'security_algo': lambda level, seed: bytes([s+1 for s in seed]), # Dummy security algorithm
-  'exception_on_negative_response': True,
-  'request_timeout': 5,
+from udsoncan.services import *
+config = {
+    'security_algo': lambda level, seed: bytes([s+1 for s in seed]),
+    'exception_on_negative_response': True,
+    'request_timeout': 5,
 }
-
-with Client(conn, config=client_config) as client:
-  try:
-    # 1. Change to a session that allows more services
+with Client(conn, config=config) as client:
     client.change_session(DiagnosticSessionControl.ExtendedDiagnosticSession)
-    print("Switched to Extended Diagnostic Session.")
-    time.sleep(0.1)
-
-    # 2. Unlock a security level
-    # This will automatically perform the seed-and-key exchange
-    # using the 'security_algo' function defined in our config.
     client.unlock_security_access(SecurityAccess.Level1)
-    print("Security Level 1 unlocked.")
-    time.sleep(0.1)
-
-    # 3. Now we can access protected services
-    # For example, read the Vehicle Identification Number (VIN)
-    response = client.read_data_by_identifier(DataIdentifier.VehicleIdentificationNumber)
-    vin = response.service_data.values[DataIdentifier.VehicleIdentificationNumber]
-    print(f"Successfully read VIN: {vin}")
-
-  except udsoncan.exceptions.NegativeResponseException as e:
-    print(f"ECU returned a negative response: {e.response}")
-  except udsoncan.exceptions.InvalidResponseException as e:
-    print(f"ECU returned an invalid response: {e}")
-  finally:
-    # 4. Always return to the default session when done
+    resp = client.read_data_by_identifier(DataIdentifier.VehicleIdentificationNumber)
+    vin = resp.service_data.values[DataIdentifier.VehicleIdentificationNumber]
+    print(f"VIN: {vin}")
     client.ecu_reset(ECUReset.HardReset)
-    print("ECU reset to default state.")
+
+# ===== 4. Fun: Read ECU Software Version =====
+with Client(conn, config=config) as client:
+    resp = client.read_data_by_identifier(0xF190)  # Example ID for software version
+    print(resp.service_data.values)
+
+# ===== 5. Exception Handling =====
+try:
+    with Client(conn, config=config) as client:
+        client.change_session(DiagnosticSessionControl.ProgrammingSession)
+except udsoncan.exceptions.NegativeResponseException as e:
+    print(f"Negative response: {e.response}")
+
+# ===== 6. Pro-Tips =====
+# Use python-can for hardware abstraction
+# Use custom security_algo for real ECUs
+# Always reset ECU after tests
+# Use DataIdentifier for standard IDs
 ```
-This example shows how `udsoncan` simplifies a complex, multi-step diagnostic procedure into a clean, readable Python script.
