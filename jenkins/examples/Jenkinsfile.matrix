@@ -1,0 +1,29 @@
+// Matrix example: run tests on multiple Node.js versions in parallel
+pipeline {
+  agent any
+  stages {
+    stage('Matrix Test') {
+      matrix {
+        axes {
+          axis {
+            name 'NODE'
+            values '14','16','18'
+          }
+        }
+        agent {
+          docker { image "node:${NODE}-alpine" }
+        }
+        stages {
+          stage('Run Tests') {
+            steps {
+              sh 'node -v; npm ci; npm test'
+            }
+            post {
+              always { junit 'reports/**/*.xml' }
+            }
+          }
+        }
+      }
+    }
+  }
+}

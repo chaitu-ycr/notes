@@ -1,0 +1,32 @@
+// Simple Node.js CI
+pipeline {
+  agent any
+  environment { NODE_ENV = 'test' }
+  stages {
+    stage('Checkout') {
+      steps { checkout scm }
+    }
+
+    stage('Install') {
+      steps {
+        // If you use a private registry, inject tokens via credentials
+        sh 'npm ci'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'npm test'
+      }
+      post {
+        always { junit allowEmptyResults: true, testResults: 'reports/**/*.xml' }
+      }
+    }
+
+    stage('Archive') {
+      steps {
+        archiveArtifacts artifacts: 'build/**,reports/**', allowEmptyArchive: true
+      }
+    }
+  }
+}

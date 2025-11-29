@@ -1,0 +1,40 @@
+// Python CI example: runs tests with pytest, archives artifacts
+pipeline {
+  agent {
+    docker { image 'python:3.11-slim'; args '--network host -v /root/.cache/pip:/root/.cache/pip' }
+  }
+  environment {
+    PIP_CACHE_DIR = "${WORKSPACE}/.pip_cache"
+  }
+  stages {
+    stage('Checkout') { steps { checkout scm } }
+
+    stage('Install') {
+      steps {
+        sh "python -m pip install --upgrade pip setuptools wheel"
+        sh "if [ -f requirements.txt ]; then pip install -r requirements.txt; fi"
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh "mkdir -p reports && pytest --junitxml=reports/test-results.xml || true"
+      }
+      post {
+        always { junit 'reports/test-results.xml'; archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true }
+      }
+    }
+
+    stage('Package (optional)') {
+      when { expression { return fileExists('setup.py') || fileExists('pyproject.toml') } }
+      steps {
+        echo 'Building sdist and wheel'
+        sh 'python -m pip install build'
+        sh 'python -m build -n'
+      }
+      post {
+        success { archiveArtifacts artifacts: 'dist/**', allowEmptyArchive: true }
+      }
+    }
+  }
+}

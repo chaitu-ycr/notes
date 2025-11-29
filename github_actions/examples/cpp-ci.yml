@@ -1,0 +1,15 @@
+name: C++ Docker Build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build in Docker
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace gcc:12 bash -lc "apt-get update -y && apt-get install -y cmake make --no-install-recommends && mkdir -p build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Release && cmake --build . -- -j$(nproc)"
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: cpp-build
+          path: build/
