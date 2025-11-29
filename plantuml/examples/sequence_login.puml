@@ -1,0 +1,25 @@
+@startuml
+title User Login Sequence Diagram
+
+actor "User" as user
+participant "Web Server" as web
+participant "Database" as db
+
+user -> web: POST /login (username, password)
+activate web
+
+web -> db: SELECT user WHERE username = ?
+activate db
+db --> web: User record (or null)
+deactivate db
+
+alt Successful Login
+    web --> user: HTTP 200 OK (session_token)
+    note right of user: User can now access protected pages.
+else Invalid Credentials
+    web --> user: HTTP 401 Unauthorized
+    note right of user: Show "Invalid login" error message.
+end
+
+deactivate web
+@enduml

@@ -1,0 +1,10 @@
+@startgantt
+[Requirement Analysis] lasts 5 days
+[Design] lasts 10 days
+[Development] lasts 15 days
+[Testing] lasts 5 days
+
+[Requirement Analysis] -> [Design]
+[Design] -> [Development]
+[Development] -> [Testing]
+@endgantt

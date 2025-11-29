@@ -61,53 +61,29 @@ If this fails, open the job Console Output and check agent connectivity and work
 
 ## 💡 Practical Jenkinsfile Examples
 
-1) Node.js CI (checkout, install, test)
+1) **Node.js CI** (`examples/nodejs_pipeline.jenkinsfile`)
+   - Checkout, install, test, archive artifacts.
 
-```groovy
-pipeline {
-    agent any
-    environment { NODE_ENV = 'test' }
-    stages {
-        stage('Checkout') { steps { checkout scm } }
-        stage('Install')  { steps { sh 'npm ci' } }
-        stage('Test')     { steps { sh 'npm test' } }
-        stage('Archive')  { steps { archiveArtifacts artifacts: 'reports/**/*.xml', allowEmptyArchive: true } }
-    }
-}
-```
+2) **Docker Agent** (`examples/docker_build_pipeline.jenkinsfile`)
+   - Run build inside a Docker container for reproducibility.
 
-2) Use a Docker agent (recommended for reproducible build environments)
+3) **Matrix Build** (`examples/matrix_build_pipeline.jenkinsfile`)
+   - Run tests across multiple Node.js versions in parallel.
 
-```groovy
-pipeline {
-    agent {
-        docker { image 'node:18-alpine'; args '--network host' }
-    }
-    stages {
-        stage('Build') { steps { sh 'npm ci && npm run build' } }
-    }
-}
-```
+4) **C++ Pipeline** (`examples/cpp_pipeline.jenkinsfile`)
+   - CMake build inside a GCC Docker container.
 
-3) Matrix / parallel example (run tests on multiple node versions)
+5) **Python Pipeline** (`examples/python_pipeline.jenkinsfile`)
+   - Python testing with pytest.
 
-```groovy
-pipeline {
-    agent any
-    stages {
-        stage('Matrix Test') {
-            matrix {
-                axes {
-                    axis { name 'NODE'; values '14','16','18' }
-                }
-                stages {
-                    stage('Run') { steps { sh "node -v; npm ci; npm test" } }
-                }
-            }
-        }
-    }
-}
-```
+6) **Scheduled / Nightly Build** (`examples/scheduled_pipeline.jenkinsfile`)
+   - Cron trigger example for nightly regression tests.
+
+7) **Input Parameters** (`examples/input_parameters_pipeline.jenkinsfile`)
+   - Build with user-defined parameters (checkboxes, dropdowns).
+
+8) **Deployment Pipeline** (`examples/deployment_pipeline.jenkinsfile`)
+   - Multi-stage deployment with manual approval gate for production.
 
 ---
 
@@ -236,11 +212,4 @@ Pro tip: store bench-specific runners as ephemeral VMs/containers to avoid state
 ## ✅ Done — Next steps
 
 - Try the Node.js or Docker example by adding a `Jenkinsfile` to your repo and creating a Pipeline job in Jenkins.
-- Want: I can add a sample `Jenkinsfile` under `jenkins/examples/` and a quick test harness — shall I create that?
-
-If you'd like, I can also:
-- add a `jenkins/examples/` folder with copy-paste pipelines,
-- create a checklist for securing a Jenkins server,
-- or generate a small `Jenkinsfile` tailored to one of your `projects/` repos.
-
-Happy to proceed — tell me which next step you want.
+- Explore the `examples/` folder for more specific use cases.

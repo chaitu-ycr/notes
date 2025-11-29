@@ -1,0 +1,28 @@
+/*
+ * Periodic Message Transmission
+ * Demonstrates sending messages cyclically
+ */
+
+variables {
+  message CAN1.Tx.StatusMsg msg_status; // Assuming database is attached
+  msTimer t1;
+  int counter = 0;
+}
+
+on start {
+  write("Starting Periodic Transmission");
+  setTimer(t1, 1000); // Start 1s timer
+}
+
+on timer t1 {
+  // Update payload
+  msg_status.dlc = 2;
+  msg_status.byte(0) = counter++;
+  msg_status.byte(1) = 0xFF; // Dummy status
+  
+  // Send message
+  output(msg_status);
+  
+  // Restart timer
+  setTimer(t1, 1000);
+}

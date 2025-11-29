@@ -1,0 +1,43 @@
+/*
+ * User Defined Functions
+ * Demonstrates creating and calling custom functions
+ */
+
+variables {
+  // Global variables
+}
+
+// Function to calculate checksum
+int calcChecksum(byte data[], int len) {
+  int sum = 0;
+  int i;
+  for (i = 0; i < len; i++) {
+    sum += data[i];
+  }
+  return (sum & 0xFF);
+}
+
+// Function to build and send a message
+void buildAndSendMsg(int id, byte payload[], int len) {
+  message * msg; // Dynamic message object
+  int i;
+  
+  msg.id = id;
+  msg.dlc = len;
+  
+  for (i = 0; i < len; i++) {
+    msg.byte(i) = payload[i];
+  }
+  
+  output(msg);
+}
+
+on key 's' {
+  byte data[4] = {0x10, 0x20, 0x30, 0x40};
+  int cs;
+  
+  cs = calcChecksum(data, 4);
+  write("Checksum: 0x%02X", cs);
+  
+  buildAndSendMsg(0x123, data, 4);
+}

@@ -1,0 +1,14 @@
+/*
+ * Execute External Programs
+ * Runs external commands from CAPL
+ */
+
+on key 'x' {
+  // Open calculator
+  sysExec("calc.exe", "");
+}
+
+on key 'd' {
+  // List files in current directory
+  sysExecCmd("dir", "", ".");
+}

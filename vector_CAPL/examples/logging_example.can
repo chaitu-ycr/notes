@@ -1,0 +1,23 @@
+/*
+ * Logging Example
+ * Demonstrates writing to the Write Window
+ */
+
+variables {
+}
+
+on message * {
+  // Log all received messages with timestamp
+  write("[%10.3f] ID: 0x%X DLC: %d", timeNow()/100000.0, this.id, this.dlc);
+}
+
+on start {
+  write("Logging started...");
+  write("Use 'write()' to print to this window.");
+}
+
+on key 'l' {
+  // Toggle logging to file
+  write("Toggling file logging...");
+  // Note: startLogging/stopLogging usually controlled via GUI or specific functions
+}

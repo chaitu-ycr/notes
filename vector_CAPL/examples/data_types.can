@@ -1,0 +1,36 @@
+/*
+ * Data Types and Variables
+ * Demonstrates various CAPL data types
+ */
+
+variables {
+  // Scalar types
+  byte day = 1;      // 1 Byte unsigned
+  word month = 12;   // 2 Byte unsigned
+  dword year = 2023; // 4 Byte unsigned
+  int angle = -45;   // 2 Byte signed
+  long profit = -1000; // 4 Byte signed
+  int64 ticks;       // 8 Byte signed
+  qword ts;          // 8 Byte unsigned
+  
+  // Floating point
+  float pi_value = 3.14;
+  double stock_value = 5.123456;
+  
+  // Arrays
+  int sensorValues[8];
+  char name[12] = "CAPL";
+  
+  // Associative Arrays (Maps)
+  int lookup[float]; // Map float -> int
+}
+
+on start {
+  // Usage examples
+  ticks = 1234567890LL;
+  
+  lookup[1.5] = 10;
+  lookup[2.5] = 20;
+  
+  write("Year: %d, PI: %f", year, pi_value);
+}

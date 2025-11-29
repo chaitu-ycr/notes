@@ -1,0 +1,30 @@
+/* 
+ * Basic Syntax Example
+ * Demonstrates variables, timers, and message transmission
+ */
+
+variables {
+  // Global variables
+  msTimer periodicTx;
+  message 0x100 MyMsg; // Define message with ID 0x100
+}
+
+on start {
+  write("CAPL Program Started");
+  
+  // Initialize message data
+  MyMsg.dlc = 8;
+  MyMsg.byte(0) = 0x01;
+  MyMsg.byte(1) = 0x02;
+  
+  // Start timer (100ms)
+  setTimer(periodicTx, 100);
+}
+
+on timer periodicTx {
+  // Send message
+  output(MyMsg);
+  
+  // Reset timer for next cycle
+  setTimer(periodicTx, 100);
+}

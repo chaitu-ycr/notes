@@ -1,0 +1,20 @@
+@startuml
+package "Frontend" {
+  [Web App]
+}
+
+package "Backend" {
+  [API Gateway]
+  [Auth Service]
+  [User Service]
+}
+
+database "PostgreSQL" {
+  [User DB]
+}
+
+[Web App] --> [API Gateway] : HTTPS
+[API Gateway] --> [Auth Service] : gRPC
+[API Gateway] --> [User Service] : gRPC
+[User Service] --> [User DB] : JDBC
+@enduml

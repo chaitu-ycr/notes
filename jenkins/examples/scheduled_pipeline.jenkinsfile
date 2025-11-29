@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    
+    // Trigger this job every night at midnight
+    triggers {
+        cron('0 0 * * *')
+    }
+
+    stages {
+        stage('Nightly Build') {
+            steps {
+                echo 'Starting nightly build...'
+                // Add your build steps here
+                sh 'echo "Running nightly maintenance tasks"'
+            }
+        }
+        stage('Heavy Tests') {
+            steps {
+                echo 'Running long-running regression tests...'
+            }
+        }
+    }
+}

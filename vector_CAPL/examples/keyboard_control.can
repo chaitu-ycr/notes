@@ -1,0 +1,21 @@
+/*
+ * Keyboard Control
+ * Demonstrates manual message sending via keyboard
+ */
+
+variables {
+  message 0x400 ControlMsg;
+}
+
+on key 'm' {
+  write("Sending Manual Message...");
+  ControlMsg.dlc = 1;
+  ControlMsg.byte(0) = 0x01;
+  output(ControlMsg);
+}
+
+on key 's' {
+  write("Stopping Engine...");
+  ControlMsg.byte(0) = 0x00;
+  output(ControlMsg);
+}

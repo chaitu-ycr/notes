@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: 'Target environment to deploy to')
+        booleanParam(name: 'SKIP_TESTS', defaultValue: false, description: 'Skip unit tests?')
+        choice(name: 'LOG_LEVEL', choices: ['INFO', 'DEBUG', 'WARN'], description: 'Logging level')
+    }
+
+    stages {
+        stage('Setup') {
+            steps {
+                echo "Deploying to ${params.DEPLOY_ENV}"
+                echo "Log level: ${params.LOG_LEVEL}"
+            }
+        }
+        stage('Test') {
+            when {
+                expression { return params.SKIP_TESTS == false }
+            }
+            steps {
+                echo "Running tests..."
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh "echo Deploying to ${params.DEPLOY_ENV}..."
+            }
+        }
+    }
+}

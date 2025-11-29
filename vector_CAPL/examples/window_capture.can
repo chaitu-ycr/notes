@@ -1,0 +1,16 @@
+/*
+ * Window Capture
+ * Captures screenshots for test reports
+ */
+
+testcase test_CaptureScreen() {
+  // Perform some action
+  @Engine::Speed = 1000;
+  testWaitForTimeout(500);
+  
+  // Capture "Graphics" window
+  TestReportAddWindowCapture("Graphics", "", "Engine Speed Graph");
+  
+  // Capture "Trace" window
+  TestReportAddWindowCapture("Trace", "", "Trace Window");
+}

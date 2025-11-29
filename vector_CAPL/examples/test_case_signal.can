@@ -1,0 +1,20 @@
+/*
+ * Test Case: Signal Validation
+ * Checks if a signal stays within range
+ */
+
+void MainTest() {
+  test_SignalCheck();
+}
+
+testcase test_SignalCheck() {
+  float lower = 500;
+  float upper = 1500;
+  
+  // Wait for signal to be in range for at least 1000ms
+  if (testWaitForSignalInRange(Engine::Speed, lower, upper, 1000)) {
+    testStepPass("Signal Check", "Engine Speed within range");
+  } else {
+    testStepFail("Signal Check", "Engine Speed out of range!");
+  }
+}

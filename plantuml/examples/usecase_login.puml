@@ -1,0 +1,9 @@
+@startuml
+left to right direction
+actor User
+rectangle "Authentication System" {
+  User -- (Login)
+  (Login) .> (Verify Password) : <<include>>
+  (Login) <. (Display Error) : <<extend>>
+}
+@enduml

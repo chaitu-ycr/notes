@@ -1,0 +1,39 @@
+/*
+ * Event Handlers
+ * Demonstrates various system and CAN events
+ */
+
+variables {
+}
+
+on preStart {
+  write("1. PreStart: Init variables here");
+}
+
+on start {
+  write("2. Start: Measurement started");
+}
+
+on preStop {
+  write("3. PreStop: Clean up before stop");
+}
+
+on stopMeasurement {
+  write("4. StopMeasurement: Bye!");
+}
+
+on key 'a' {
+  write("Key 'a' pressed");
+}
+
+on message 0x123 {
+  write("Received message 0x123");
+}
+
+on signal EngineSpeed {
+  write("Engine Speed changed to %f", this.raw);
+}
+
+on sysvar_update MyNamespace::MyVar {
+  write("System variable updated: %d", @this);
+}

@@ -1,0 +1,14 @@
+@startuml
+class Car {
+  - String model
+  - Engine engine
+  + void start()
+  + void stop()
+}
+
+class Engine {
+  + void ignite()
+}
+
+Car *-- Engine : contains
+@enduml

@@ -1,0 +1,26 @@
+/*
+ * Test Case: Diagnostic Request
+ * Sends UDS request and validates response
+ */
+
+void MainTest() {
+  test_DiagSession();
+}
+
+testcase test_DiagSession() {
+  diagRequest Door.DefaultSession_Start req;
+  
+  // Send request
+  diagSendRequest(req);
+  
+  // Wait for response (timeout 1000ms)
+  if (testWaitForDiagResponse(req, 1000)) {
+    if (DiagCheckValidRespPrimitive(req)) {
+      testStepPass("Diagnostics", "Positive response received");
+    } else {
+      testStepFail("Diagnostics", "Invalid response");
+    }
+  } else {
+    testStepFail("Diagnostics", "Timeout waiting for response");
+  }
+}

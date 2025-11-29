@@ -1,141 +1,177 @@
-# ախ UDS: The Language of Car Diagnostics
+# 🚗 UDS: The Secret Language of Car Diagnostics
 
-Welcome to Unified Diagnostic Services (UDS)! If DoIP is the high-speed postal service, then UDS (ISO 14229) is the **language** spoken between a diagnostic tool and a vehicle's ECUs. It defines a standard set of "questions" and "answers" that allow a technician to diagnose problems, read data, and update software, regardless of the car's manufacturer.
+UDS (Unified Diagnostic Services, ISO 14229) is how diagnostic tools and ECUs have actual conversations. If CAN is the highway and DoIP is the postal service, then UDS is the **language** everyone speaks. It's a standardized set of "questions and answers" that work across all modern vehicles, regardless of manufacturer.
 
-This guide will introduce you to the core concepts of UDS and take you on a tour of its most common and useful services.
-
----
-
-## 🤔 What is UDS and Why is it a "Unified" Standard?
-
-**What is it?**
-UDS is a diagnostic communication protocol used in automotive electronics. It defines the format of messages and the sequence of operations for a client (a diagnostic tool) to request information or actions from a server (an ECU).
-
-**Why is it "Unified"?**
-Before UDS, different manufacturers had their own proprietary diagnostic protocols, meaning a workshop needed different tools for every car brand. UDS created a common standard, so a single diagnostic tool can communicate with any UDS-compliant vehicle. It "unifies" the way we talk to cars.
+This guide will make you fluent in UDS—from reading fault codes to flashing software.
 
 ---
 
-## 🧠 UDS at a Glance: A Map of Services
+## 🎯 What Makes It "Unified"?
 
-UDS is a rich standard with many services. This mindmap categorizes the most common services to give you a high-level overview.
+**Before UDS:** Every car brand had its own proprietary diagnostic protocol. Want to diagnose a Mercedes? You need Mercedes tools. BMW? Different tools. It was chaos.
+
+**After UDS:** One protocol to rule them all. A single diagnostic tool can now talk to any UDS-compliant ECU, whether it's in a Ford, VW, or Tesla.
+
+---
+
+## 🗺️ UDS Services Map
+
+UDS is organized into services (like API endpoints). Here's the landscape:
 
 ```mermaid
 mindmap
   root((UDS Services))
-    Diagnostic & Session Management
-      $10 Diagnostic Session Control
-      $11 ECU Reset
-      $3E Tester Present
-      $85 Control DTC Setting
-    Fault Memory (DTCs)
-      $19 Read DTC Information
-      $14 Clear Diagnostic Information
-    Data Transmission
-      $22 Read Data By Identifier
-      $2E Write Data By Identifier
-      $23 Read Memory By Address
-      $3D Write Memory By Address
-    Remote Routine Activation
-      $31 Routine Control
-    Upload / Download
-      $34 Request Download
-      $35 Request Upload
-      $36 Transfer Data
-      $37 Request Transfer Exit
+    Session & Control
+      0x10 Diagnostic Session Control
+      0x11 ECU Reset
+      0x3E Tester Present
+      0x85 Control DTC Setting
+    Fault Memory
+      0x19 Read DTC Information
+      0x14 Clear Diagnostic Information
+    Data Access
+      0x22 Read Data By Identifier
+      0x2E Write Data By Identifier
+      0x23 Read Memory By Address
+      0x3D Write Memory By Address
+    Routines
+      0x31 Routine Control
+    Flashing/Programming
+      0x34 Request Download
+      0x35 Request Upload
+      0x36 Transfer Data
+      0x37 Request Transfer Exit
     Security
-      $27 Security Access
+      0x27 Security Access
 ```
 
 ---
 
-## 🧩 The Building Blocks: Core Concepts Explained
+## 🧠 Core Concepts (The Basics You Need)
 
-To understand UDS, you need to know a few key terms.
+### Request-Response Pattern
 
-*   **Client & Server:** In UDS, the **Client** is the diagnostic tool (tester), and the **Server** is an ECU in the vehicle. The client sends a request, and the server sends a response.
-*   **Service ID (SID):** This is a one-byte command that tells the ECU *what* you want to do. For example, `$22` is the SID for "Read Data By Identifier."
-*   **Sub-function:** Some services have options. The sub-function is an optional byte that specifies *which* option you want. For example, in the Diagnostic Session Control service (`$10`), a sub-function of `$03` activates the "Extended Diagnostic Session."
-*   **Positive/Negative Response:** If the ECU can perform the requested action, it sends a **Positive Response**. If it cannot, it sends a **Negative Response**.
-*   **Negative Response Code (NRC):** If a request fails, the ECU sends back an NRC, which is a one-byte code that explains *why* it failed (e.g., `$7F` = Service Not Supported, `$31` = Request Out of Range).
+Every UDS interaction follows a simple pattern:
 
----
+```
+Tester (You) ───[Request]───> ECU
+Tester (You) <──[Response]─── ECU
+```
 
-## 📬 Anatomy of a UDS Message
+### Service ID (SID)
 
-A UDS communication is always a request-response pair. The messages are made up of hexadecimal bytes.
+Think of this as the "command code." Every service has a unique byte:
+- `0x22` = "Read data"
+- `0x2E` = "Write data"  
+- `0x19` = "Read fault codes"
 
-### Request Message
+### Positive vs. Negative Responses
 
-A request from the client (tester) typically looks like this:
-`[SID] [Sub-function (optional)] [Parameters... (optional)]`
+**Positive Response:** ECU adds `0x40` to the SID.
+- Request: `22` (Read)
+- Response: `62` (22 + 40 = 62) = Success!
 
-*   **Example:** Request to read the Vehicle Identification Number (VIN), which has the Identifier `$F190`.
-    `[22 F1 90]`
-    *   `22`: The SID for "Read Data By Identifier."
-    *   `F1 90`: The two-byte identifier for the VIN.
+**Negative Response:** Always starts with `7F`.
+- Response: `7F 22 31` = "Service 0x22 failed, reason: Request Out Of Range"
 
-### Response Message
+### Negative Response Code (NRC)
 
-**Positive Response (`+`)**
-If successful, the ECU adds `$40` to the request SID for its response SID.
-`[Response SID] [Original Sub-function/Parameters] [Response Data...]`
-
-*   **Example:** Positive response for the VIN request.
-    `[62 F1 90 V I N ...]`
-    *   `62`: The positive response SID (`22` + `40` = `62`).
-    *   `F1 90`: Echoes back the identifier that was requested.
-    *   `V I N ...`: The actual 17-byte VIN data.
-
-**Negative Response (`-`)**
-If it fails, the response is always three bytes.
-`[7F] [Request SID] [NRC]`
-
-*   **Example:** Negative response if the VIN is not supported.
-    `[7F 22 31]`
-    *   `7F`: The SID for a negative response.
-    *   `22`: Echoes back the SID of the original request.
-    *   `31`: The NRC for "Request Out Of Range."
+When something fails, the NRC tells you why:
+- `0x13` = Wrong message length
+- `0x22` = Conditions not right (e.g., car is moving)
+- `0x33` = Security access denied
+- `0x35` = Invalid key (wrong password)
 
 ---
 
-## 🛠️ A Practical Tour of Common UDS Services
+## 📖 Service Documentation
 
-This is where the real power of UDS becomes clear. Let's look at some of the most frequently used diagnostic services.
+We've created detailed guides for each major UDS service. Click to learn more:
 
-| Service | Name | Request Example | Positive Response Example | Common NRCs |
-|---|---|---|---|---|
-| **$10** | **Diagnostic Session Control** | `10 03` (Enter Extended Session) | `50 03` (Success) | `$7E` (Sub-function not supported) |
-| **$11** | **ECU Reset** | `11 01` (Hard Reset) | `51 01` (Success) | `$22` (Conditions not correct) |
-| **$19** | **Read DTC Information** | `19 02 09` (Report DTCs by status mask) | `59 02 ...` (List of DTCs) | - |
-| **$14** | **Clear Diagnostic Information** | `14 FF FF FF` (Clear all DTCs) | `54` (Success) | `$31` (Request out of range) |
-| **$22** | **Read Data By Identifier** | `22 F1 90` (Read VIN) | `62 F1 90 ...` (VIN data) | `$13` (Incorrect message length) |
-| **$27** | **Security Access** | `27 01` (Request Seed) | `67 01 ...` (Seed bytes) | `$35` (Invalid key) |
-| **$2E** | **Write Data By Identifier** | `2E F1 90 ...` (Write VIN) | `6E F1 90` (Success) | `$7F` (Service not supported) |
-| **$3E** | **Tester Present** | `3E 80` (Suppress positive response) | (No response) | `$11` (Service not supported) |
+### Session & Control
+- **[0x10 Diagnostic Session Control](services/0x10_diagnostic_session_control.md)** - Unlock different diagnostic modes
+- **[0x11 ECU Reset](services/0x11_ecu_reset.md)** - Reboot the ECU
+- **[0x3E Tester Present](services/0x3e_tester_present.md)** - Keep session alive (heartbeat)
+- **[0x85 Control DTC Setting](services/0x85_control_dtc_setting.md)** - Enable/disable fault recording
+
+### Fault Memory (DTCs)
+- **[0x19 Read DTC Information](services/0x19_read_dtc_information.md)** - Read fault codes and freeze frames
+- **[0x14 Clear Diagnostic Information](services/0x14_clear_diagnostic_information.md)** - Clear fault codes
+
+### Data Access
+- **[0x22 Read Data By Identifier](services/0x22_read_data_by_identifier.md)** - Read structured data (VIN, sensor values, etc.)
+- **[0x2E Write Data By Identifier](services/0x2e_write_data_by_identifier.md)** - Write configuration/calibration
+- **[0x23 Read Memory By Address](services/0x23_read_memory_by_address.md)** - Direct memory reading
+- **[0x3D Write Memory By Address](services/0x3d_write_memory_by_address.md)** - Direct memory writing (dangerous!)
+
+### Routines & Testing
+- **[0x31 Routine Control](services/0x31_routine_control.md)** - Run ECU self-tests and procedures
+
+### Programming/Flashing
+- **[0x34 Request Download](services/0x34_request_download.md)** - Initiate software download to ECU
+- **[0x35 Request Upload](services/0x35_request_upload.md)** - Initiate software upload from ECU  
+- **[0x36 Transfer Data](services/0x36_transfer_data.md)** - Transfer data chunks
+- **[0x37 Request Transfer Exit](services/0x37_request_transfer_exit.md)** - Finalize transfer
+
+### Security
+- **[0x27 Security Access](services/0x27_security_access.md)** - Unlock protected operations (seed-key challenge)
 
 ---
 
-## 🚀 A Real-World Scenario: Reading and Clearing Fault Codes
+## 🚀 Real-World Scenario: Reading and Clearing Fault Codes
 
-Let's see how these services work together in a typical diagnostic session to read and clear Diagnostic Trouble Codes (DTCs).
+Let's walk through a typical diagnostic session:
 
-1.  **Enter Extended Session:** The client sends `10 03` to unlock more powerful services. The ECU responds `50 03`.
-2.  **Request Security Access (if needed):** Some ECUs require security access to read or clear DTCs. The client sends `27 01` (Request Seed), the ECU responds with a seed (`67 01 ...`), the client calculates a key and sends it back (`27 02 ...`), and the ECU confirms (`67 02`).
-3.  **Read Fault Codes:** The client sends `19 02 09` to ask for all DTCs. The ECU responds `59 02 ...` with a list of the currently active fault codes.
-4.  **Clear Fault Codes:** After the issue is fixed, the client sends `14 FF FF FF` to clear all DTCs. The ECU responds `54`.
-5.  **Read Fault Codes Again:** The client sends `19 02 09` again to confirm that the codes have been cleared. The ECU responds `59 02` with an empty list, confirming success.
+```
+Step 1: Enter Extended Session
+→ Request:  10 03
+← Response: 50 03
+   (Unlocks more diagnostic features)
+
+Step 2: Request Security Access (if needed)
+→ Request:  27 01
+← Response: 67 01 12 34
+   (Seed: 0x1234)
+
+→ Calculate key offline
+   Key = CalculateKey(0x1234) = 0xABCD
+
+→ Request:  27 02 AB CD
+← Response: 67 02
+   (Unlocked!)
+
+Step 3: Read Fault Codes
+→ Request:  19 02 09
+← Response: 59 02 FF P0 13 5A 09 P0 14 2B 08
+   (2 DTCs found)
+
+Decoded:
+- P0135A: O2 Sensor Heater Circuit (confirmed, active)
+- P0142B: MAP Sensor Out of Range (confirmed)
+
+Step 4: Clear Fault Codes (after fixing issues)
+→ Request:  14 FF FF FF
+← Response: 54
+   (All DTCs cleared!)
+
+Step 5: Verify Clear
+→ Request:  19 02 09
+← Response: 59 02 FF
+   (No DTCs—clean!)
+```
 
 ---
 
 ## 🏅 Best Practices
 
-*   **Always Check for a Negative Response:** Don't assume your request worked. A Negative Response Code (NRC) tells you *why* it failed.
-*   **Handle Security Access:** Many powerful services (like writing data or clearing fault codes) require the ECU to be "unlocked" via the Security Access service (`$27`).
-*   **Know Your Sessions:** The Diagnostic Session Control service (`$10`) changes the ECU's state. Be aware of what session you are in, as it affects which services are available.
+- **Check for negative responses:** Don't assume success. A `7F` response means "something went wrong"—read the NRC!
+- **Security is key:** Many operations (writing calibration, clearing DTCs, flashing) require security unlock via 0x27.
+- **Know your sessions:** Default session is limited. Extended session unlocks advanced diagnostics. Programming session is for flashing.
+- **Keep sessions alive:** Send 0x3E TesterPresent every 2-3 seconds to prevent timeout.
 
 ---
 
-## 🔗 Further Reading
+## 📚 Further Reading
 
-*   [ISO 14229-1:2020](https://www.iso.org/standard/72439.html) (The official UDS standard)
+- [ISO 14229-1:2020](https://www.iso.org/standard/72439.html) (Official UDS standard)
+- [UDS on Wikipedia](https://en.wikipedia.org/wiki/Unified_Diagnostic_Services)

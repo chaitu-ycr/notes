@@ -1,0 +1,36 @@
+/*
+ * String Manipulation
+ * Demonstrates string handling in CAPL
+ */
+
+variables {
+  char buffer[64];
+}
+
+on start {
+  char name[20] = "Vector CANoe";
+  int version = 17;
+  
+  // Formatting strings
+  snprintf(buffer, elcount(buffer), "Tool: %s, Version: %d", name, version);
+  write(buffer);
+  
+  // String copy
+  strncpy(buffer, "New String", elcount(buffer));
+  
+  // String length
+  write("Length: %d", strlen(buffer));
+}
+
+on message 0x100 {
+  // Extract string from payload (if payload contains ASCII)
+  char vin[18];
+  int i;
+  
+  for(i=0; i<17; i++) {
+    vin[i] = this.byte(i);
+  }
+  vin[17] = 0; // Null terminate
+  
+  write("Received VIN: %s", vin);
+}

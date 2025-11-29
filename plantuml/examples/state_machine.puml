@@ -1,0 +1,17 @@
+@startuml
+[*] --> Idle
+
+state Idle {
+  [*] --> Waiting
+  Waiting --> Processing : Start
+}
+
+state Processing {
+  [*] --> Validating
+  Validating --> Computing : Valid
+  Validating --> Error : Invalid
+}
+
+Processing --> Idle : Finish
+Error --> Idle : Reset
+@enduml

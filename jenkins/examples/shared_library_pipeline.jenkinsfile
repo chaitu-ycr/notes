@@ -1,0 +1,23 @@
+// Assuming you have a shared library configured in Jenkins Global Configuration
+// named 'my-shared-library'
+@Library('my-shared-library') _
+
+pipeline {
+    agent any
+    
+    stages {
+        stage('Use Shared Step') {
+            steps {
+                // Using a custom step defined in the shared library
+                // e.g., vars/sayHello.groovy
+                script {
+                    try {
+                        sayHello 'World'
+                    } catch (Exception e) {
+                        echo "Shared library not actually loaded in this example, but this is the syntax."
+                    }
+                }
+            }
+        }
+    }
+}

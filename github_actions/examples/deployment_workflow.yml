@@ -1,0 +1,31 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: echo "Building artifact..."
+
+  deploy-staging:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Deploy to Staging
+        run: echo "Deploying to Staging..."
+
+  deploy-prod:
+    needs: deploy-staging
+    runs-on: ubuntu-latest
+    # This environment should be configured in GitHub Repo Settings -> Environments
+    # to require manual approval reviewers.
+    environment: production
+    steps:
+      - name: Deploy to Production
+        run: echo "Deploying to Production..."

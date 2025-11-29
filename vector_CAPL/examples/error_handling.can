@@ -1,0 +1,25 @@
+/*
+ * Error Handling
+ * Demonstrates bus-off handling and data validation
+ */
+
+variables {
+  msTimer recoveryTimer;
+}
+
+on message 0x300 {
+  // Data validation
+  if (this.byte(0) > 100) {
+    write("Error: Invalid signal value %d", this.byte(0));
+  }
+}
+
+on busOff {
+  write("Bus Off detected! Attempting recovery in 1s...");
+  setTimer(recoveryTimer, 1000);
+}
+
+on timer recoveryTimer {
+  write("Resetting CAN controller...");
+  resetCan(); // Reset CAN controller
+}

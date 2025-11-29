@@ -1,0 +1,30 @@
+/*
+ * System Variable Reaction
+ * Reacts to panel inputs (System Variables)
+ */
+
+variables {
+  message 0x500 StatusMsg;
+}
+
+// Assumes a system variable "Engine::Ignition" exists
+on sysvar_update Engine::Ignition {
+  if (@this == 1) {
+    write("Ignition ON");
+    StatusMsg.byte(0) = 1;
+  } else {
+    write("Ignition OFF");
+    StatusMsg.byte(0) = 0;
+  }
+  output(StatusMsg);
+}
+
+on key '1' {
+  // Simulate panel input
+  @Engine::Ignition = 1;
+}
+
+on key '0' {
+  // Simulate panel input
+  @Engine::Ignition = 0;
+}

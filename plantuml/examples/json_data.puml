@@ -1,0 +1,16 @@
+@startjson
+{
+  "project": "PlantUML Examples",
+  "status": "In Progress",
+  "tasks": [
+    {
+      "name": "Create examples",
+      "completed": true
+    },
+    {
+      "name": "Update docs",
+      "completed": false
+    }
+  ]
+}
+@endjson

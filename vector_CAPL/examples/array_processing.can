@@ -1,0 +1,38 @@
+/*
+ * Array Processing
+ * Demonstrates array usage and buffering
+ */
+
+variables {
+  int sensorValues[8];
+  message * msgBuffer[100]; // Buffer for 100 messages
+  int bufIdx = 0;
+}
+
+on start {
+  int i;
+  // Initialize array
+  for(i=0; i<8; i++) {
+    sensorValues[i] = i * 10;
+  }
+}
+
+on message 0x200 {
+  // Store message in buffer
+  if (bufIdx < 100) {
+    msgBuffer[bufIdx] = this;
+    bufIdx++;
+  } else {
+    write("Buffer full!");
+  }
+}
+
+on key 'p' {
+  // Process buffer
+  int i;
+  write("Processing %d buffered messages...", bufIdx);
+  for(i=0; i<bufIdx; i++) {
+    write("Msg %d ID: %X", i, msgBuffer[i].id);
+  }
+  bufIdx = 0; // Reset
+}

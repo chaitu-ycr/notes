@@ -1,0 +1,12 @@
+@startmindmap
+* Project
+** Planning
+*** Requirements
+*** Design
+** Execution
+*** Development
+*** Testing
+** Deployment
+*** Staging
+*** Production
+@endmindmap

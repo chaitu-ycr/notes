@@ -187,9 +187,29 @@ jobs:
 
 See `github_actions/examples/` for copy-paste workflows:
 
-- `nodejs-ci.yml` — Node.js CI with cache & artifacts
-- `python-ci.yml` — Python pytest matrix example
-- `cpp-ci.yml` — CMake build in Docker
+1) **Node.js CI** (`examples/nodejs_ci_workflow.yml`)
+   - Node.js CI with cache & artifacts.
+
+2) **Python CI** (`examples/python_ci_workflow.yml`)
+   - Python pytest matrix example.
+
+3) **C++ CI** (`examples/cpp_ci_workflow.yml`)
+   - CMake build in Docker.
+
+4) **Scheduled / Nightly** (`examples/scheduled_workflow.yml`)
+   - Cron trigger example.
+
+5) **Manual Trigger** (`examples/manual_trigger_workflow.yml`)
+   - `workflow_dispatch` with input parameters.
+
+6) **Secure Secrets** (`examples/secrets_usage_workflow.yml`)
+   - Best practices for using secrets.
+
+7) **Deployment** (`examples/deployment_workflow.yml`)
+   - Multi-stage deployment with environment protection rules.
+
+8) **Composite Action** (`examples/composite_action/action.yml`)
+   - Reusable action example.
 
 ---
 
@@ -203,6 +223,5 @@ See `github_actions/examples/` for copy-paste workflows:
 
 ## ✅ Next steps
 
-- Want me to add example workflows into `github_actions/examples/` now? I can also tailor a workflow for a specific `projects/` repo (e.g., CMake flags for `projects/ABS`).
-
-Tell me which example or project to target next and I'll add it.
+- Try the Node.js or C++ example by adding the workflow file to `.github/workflows/` in your repo.
+- Explore `examples/` for more advanced patterns like deployment and composite actions.
