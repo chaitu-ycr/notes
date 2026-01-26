@@ -171,7 +171,7 @@ Define these for your system:
 
 ### Recipe 1: Unit Rule Test
 
-**Goal**: Verify rule triggers correctly for edge cases  
+**Goal**: Verify rule triggers correctly for edge cases
 **Steps**:
 ```python
 def test_is_suspicious():
@@ -182,14 +182,14 @@ def test_is_suspicious():
     # Boundary: just below threshold — should not alert
     assert not is_suspicious(CANFrame(0x200, b"\x00\xFE"))
 ```
-**Expected**: Deterministic pass/fail; no timing dependencies  
+**Expected**: Deterministic pass/fail; no timing dependencies
 **Tools**: pytest, unittest
 
 ---
 
 ### Recipe 2: SIL Replay Test
 
-**Goal**: Validate detector on recorded trace  
+**Goal**: Validate detector on recorded trace
 **Steps**:
 1. Export your CAN log to CSV (id, data, timestamp)
 2. Load and replay with the harness snippet below
@@ -240,7 +240,7 @@ def replay(frames, detector, delay=0.01):
 
 ### Recipe 3: Rate-Burst (DoS) Test
 
-**Goal**: Validate behavior under bus overload  
+**Goal**: Validate behavior under bus overload
 **Steps**:
 1. Generate synthetic high-rate frame stream (>10x normal)
 2. Replay for 1–5 seconds
@@ -253,7 +253,7 @@ def replay(frames, detector, delay=0.01):
 
 ### Recipe 4: Replay & Arbitration Attack
 
-**Goal**: Test multi-ID coordinated attacks  
+**Goal**: Test multi-ID coordinated attacks
 **Steps**:
 1. Craft sequences that exercise CAN arbitration (high ID priority vs. low)
 2. Inject messages in rapid succession to test priority inversion
@@ -279,11 +279,10 @@ def replay(frames, detector, delay=0.01):
 
 ### How to Log & Triage
 
-**Capture Format**:
-```
-timestamp | alert_id | detector_reason | offending_frame | ecu_state_cpu_mem
-2026-01-26T10:30:45.123Z | RATE_BURST_0x300 | freq > 100 Hz | 0x300 00FF | 45% / 8MB
-```
+| Timestamp | Alert ID | Detector Reason | Offending Frame | ECU State |
+|-----------|----------|-----------------|-----------------|-----------|
+| 2026-01-26T10:30:45.123Z | RATE_BURST_0x300 | freq > 100 Hz | 0x300 [00FF] | CPU: 45% / RAM: 8MB |
+
 
 **Triage Approach**:
 1. Sort by severity (safety > functional > info)
