@@ -12,14 +12,14 @@ Think of `uv` as the **Formula 1 pit crew** for your Python projects.
 
 It's an extremely fast, all-in-one package and project manager written in **Rust**. It replaces `pip`, `pip-tools`, `virtualenv`, `poetry`, and even `pyenv` in one single binary.
 
-### 🏎️ Why should you care? (The Hook)
+### 🏎️ Why should you care?
 *   **It is absurdly fast.** We're talking 10-100x faster than `pip`. It resolves dependencies before you can blink.
 *   **It saves disk space.** It uses a global cache, so you don't have 50 copies of `numpy` eating your SSD.
 *   **It's a drop-in replacement.** You don't need to learn a whole new language. It speaks `pip`.
 
 ---
 
-## 🚀 Quick Start (TL;DR)
+## 🚀 Quick Start
 
 Stop reading and start zooming.
 
@@ -117,8 +117,10 @@ Add this magic comment to the top of `script.py`:
 # ///
 
 import requests
-from rich import print
-print(requests.get("https://httpbin.org/json").json())
+r = requests.get("https://jsonplaceholder.typicode.com/todos/1", timeout=10)
+print("Status:", r.status_code)
+r.raise_for_status()  # raises exception for 4xx/5xx
+print(r.json())
 ```
 Now just run it:
 ```bash
