@@ -1,3 +1,9 @@
+---
+title: "Software Packaging and Distribution in Python"
+aliases:
+  - "Software Packaging and Distribution in Python"
+---
+
 # Software Packaging and Distribution in Python
 
 This section covers Python standard libraries for packaging, distributing, and managing Python environments and archives.
@@ -49,3 +55,6 @@ python myapp.pyz
 ```
 
 ---
+
+
+

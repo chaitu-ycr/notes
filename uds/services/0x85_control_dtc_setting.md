@@ -1,3 +1,9 @@
+---
+title: "🎛️ 0x85: Control DTC Setting"
+aliases:
+  - "🎛️ 0x85: Control DTC Setting"
+---
+
 # 🎛️ 0x85: Control DTC Setting
 
 **Purpose:** Turn fault code recording ON or OFF. This is useful during testing—you don't want temporary test faults cluttering up the fault memory. It's like muting the check engine light during diagnostics.
@@ -96,3 +102,6 @@ Step 3: Re-enable DTC recording
 - **0x19 ReadDTCInformation:** Read DTCs
 - **0x14 ClearDiagnosticInformation:** Clear DTCs
 - **0x31 RoutineControl:** Often used together
+
+
+

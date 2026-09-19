@@ -1,3 +1,9 @@
+---
+title: "✍️ 0x2E: Write Data By Identifier"
+aliases:
+  - "✍️ 0x2E: Write Data By Identifier"
+---
+
 # ✍️ 0x2E: Write Data By Identifier
 
 **Purpose:** This is the "write" counterpart to 0x22 (Read Data By Identifier). It lets you change ECU configuration, calibration values, or settings by writing to specific Data Identifiers (D IDs). Think of it as editing the ECU's configuration file.
@@ -174,3 +180,6 @@ Step 3: Verify
 - **0x27 SecurityAccess:** Almost always required first
 - **0x10 DiagnosticSessionControl:** Extended session usually needed
 - **0x2C DynamicallyDefineDataIdentifier:** Create custom DIDs
+
+
+

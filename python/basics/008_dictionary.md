@@ -1,3 +1,9 @@
+---
+title: "🗝️ 008: Storing Labeled Data with Dictionaries"
+aliases:
+  - "🗝️ 008: Storing Labeled Data with Dictionaries"
+---
+
 # 🗝️ 008: Storing Labeled Data with Dictionaries
 
 Dictionaries are Python's flexible, mutable key-value stores. They let you label data, retrieve values instantly by key, and represent complex structures like JSON. Keys must be immutable; values can be anything. Use dictionaries for fast lookups, meaningful data, and real-world modeling. They're essential for web, data, and automation work.
@@ -105,3 +111,6 @@ def dict_usages():
 
 dict_usages()
 ```
+
+
+

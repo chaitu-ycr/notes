@@ -1,3 +1,9 @@
+---
+title: "📥 0x34: Request Download"
+aliases:
+  - "📥 0x34: Request Download"
+---
+
 # 📥 0x34: Request Download
 
 **Purpose:** "I want to send you a file." This initiates a download (from tester TO ECU) session. It's the first step in software flashing—you tell the ECU "get ready to receive data" and specify how much and where.
@@ -83,3 +89,6 @@ Response: 74 20 10 00
 - **0x37 RequestTransferExit:** Complete download
 - **0x10 DiagnosticSessionControl:** Need programming session
 - **0x27 SecurityAccess:** Required first
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "🔄 0x11: ECU Reset"
+aliases:
+  - "🔄 0x11: ECU Reset"
+---
+
 # 🔄 0x11: ECU Reset
 
 **Purpose:** Turn it off and on again—the universal fix! This service reboots the ECU, like hitting Ctrl+Alt+Delete on your computer. Different reset types give you control over what happens during the reboot.
@@ -139,3 +145,6 @@ Response: 7F 11 12
 - **0x10 DiagnosticSessionControl:** Used before/after reset
 - **0x27 SecurityAccess:** May be required before reset
 - **0x34-0x37 Download/Upload:** Typically followed by a reset
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "AI Context Template: Test Case Generator"
+aliases:
+  - "AI Context Template: Test Case Generator"
+---
+
 # AI Context Template: Test Case Generator
 
 ## Goal
@@ -48,3 +54,6 @@ You are an expert test case generator. Your responsibilities are:
 - Support any programming language or test framework as required by the template.
 - Output only the generated test cases unless otherwise instructed.
 ...existing code...
+
+
+

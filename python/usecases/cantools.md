@@ -1,3 +1,9 @@
+---
+title: "🚗 Usecase: Decoding CAN Bus Data with `cantools`"
+aliases:
+  - "🚗 Usecase: Decoding CAN Bus Data with `cantools`"
+---
+
 # 🚗 Usecase: Decoding CAN Bus Data with `cantools`
 
 If you've ever worked with automotive systems, robotics, or industrial machinery, you've likely encountered the **CAN bus**. It's the nervous system for most modern vehicles, carrying a constant stream of messages between components. But this data is raw and cryptic—just a bunch of IDs and bytes.
@@ -65,3 +71,6 @@ if engine_data:
 # - Use db.messages for all message definitions
 # - Use db.encode_message for encoding signals
 ```
+
+
+

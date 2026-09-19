@@ -1,3 +1,9 @@
+---
+title: "⚡ Usecase: True Parallelism with `multiprocessing`"
+aliases:
+  - "⚡ Usecase: True Parallelism with `multiprocessing`"
+---
+
 # ⚡ Usecase: True Parallelism with `multiprocessing`
 
 Your computer has multiple CPU cores, but by default, a standard Python program only runs on one at a time. This is because of a mechanism called the **Global Interpreter Lock (GIL)**, which prevents multiple threads from executing Python bytecode simultaneously.
@@ -84,3 +90,6 @@ if __name__ == '__main__':
 # Use Queue/Manager for sharing data
 # Processes have separate memory spaces
 ```
+
+
+

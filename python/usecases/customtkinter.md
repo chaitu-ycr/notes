@@ -1,3 +1,9 @@
+---
+title: "✨ Usecase: Building Modern GUIs with `customtkinter`"
+aliases:
+  - "✨ Usecase: Building Modern GUIs with `customtkinter`"
+---
+
 # ✨ Usecase: Building Modern GUIs with `customtkinter`
 
 Python's built-in library for creating desktop applications, `tkinter`, is powerful and reliable, but let's be honest—it can look a bit dated right out of the box. What if you want to create a simple GUI that looks modern and professional without learning a massive new framework like Qt or wxPython?
@@ -67,3 +73,6 @@ app.mainloop()
 # Widgets: CTkLabel, CTkEntry, CTkButton, CTkSlider, CTkSwitch, CTkFrame, etc.
 # Layout: .pack(), .grid(), .place() for positioning
 ```
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "🚗 Usecase: Vehicle Diagnostics with `udsoncan`"
+aliases:
+  - "🚗 Usecase: Vehicle Diagnostics with `udsoncan`"
+---
+
 # 🚗 Usecase: Vehicle Diagnostics with `udsoncan`
 
 **UDS (Unified Diagnostic Services)** is the standard protocol (ISO 14229-1) used in the automotive industry to diagnose, test, and configure electronic control units (ECUs). It allows you to ask an ECU questions like "What's your serial number?" (Read Data by Identifier) or give it commands like "Reset yourself" (ECU Reset).
@@ -54,3 +60,6 @@ except udsoncan.exceptions.NegativeResponseException as e:
 # Always reset ECU after tests
 # Use DataIdentifier for standard IDs
 ```
+
+
+

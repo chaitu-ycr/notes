@@ -1,3 +1,9 @@
+---
+title: "🔁 003: Repeating Actions with Loops"
+aliases:
+  - "🔁 003: Repeating Actions with Loops"
+---
+
 # 🔁 003: Repeating Actions with Loops
 
 Imagine you had to write `print("Hello")` one hundred times. That would be tedious! In programming, we often need to repeat actions, and doing it manually is out of the question. This is where loops come to the rescue. They are a fundamental concept for automation and iteration.
@@ -73,3 +79,6 @@ for idx, color in enumerate(colors):
 squares = [x*x for x in range(5)]
 print(squares)
 ```
+
+
+

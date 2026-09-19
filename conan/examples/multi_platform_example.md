@@ -1,3 +1,9 @@
+---
+title: "🌍 Multi-Platform Conan Example"
+aliases:
+  - "🌍 Multi-Platform Conan Example"
+---
+
 # 🌍 Multi-Platform Conan Example
 
 ## Why Use This?
@@ -42,3 +48,6 @@ conan build . --build-folder=build-linux
 💡 **Pro Tip:**
 - Keep your profiles in version control for consistent builds in CI/CD.
 - Use Conan's profiles to quickly test your code on multiple platforms!
+
+
+

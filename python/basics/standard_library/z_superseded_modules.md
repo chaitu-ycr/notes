@@ -1,3 +1,9 @@
+---
+title: "Superseded Python Standard Library Modules"
+aliases:
+  - "Superseded Python Standard Library Modules"
+---
+
 # Superseded Python Standard Library Modules
 
 The modules described in this chapter have been superseded by other modules for most use cases and are retained primarily for backwards compatibility.
@@ -23,3 +29,6 @@ for opt, arg in opts:
 ```
 
 ---
+
+
+

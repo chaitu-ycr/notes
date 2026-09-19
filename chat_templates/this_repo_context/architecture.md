@@ -1,3 +1,9 @@
+---
+title: "🗺️ GitHub Copilot Context Architecture"
+aliases:
+  - "🗺️ GitHub Copilot Context Architecture"
+---
+
 # 🗺️ GitHub Copilot Context Architecture
 
 Visual guide to how the Copilot context files work together.
@@ -206,7 +212,7 @@ Same as above (for compatibility across platforms)
 **Deep dive:** copilot-instructions.md  
 **Chat templates:** COPILOT_CONTEXT.md  
 **Troubleshooting:** COPILOT_USAGE_GUIDE.md  
-**Summary:** .github/README.md  
+**Summary:** .github/notes.md  
 
 ---
 
@@ -299,7 +305,7 @@ All files available in:
   ├── COPILOT_CONTEXT.md
   ├── COPILOT_USAGE_GUIDE.md
   ├── QUICK_REFERENCE.md
-  └── README.md
+  └── notes.md
 ```
 
 ---
@@ -334,7 +340,7 @@ All files available in:
 
 ## 🚀 Getting Started Today
 
-1. **Read**: `.github/README.md` (5 min) - What these files do
+1. **Read**: `.github/notes.md` (5 min) - What these files do
 2. **Scan**: `.github/QUICK_REFERENCE.md` (10 min) - Style guide
 3. **Try**: Open Copilot, use template from `.github/COPILOT_CONTEXT.md`
 4. **Reference**: As needed from other files
@@ -357,7 +363,7 @@ All files available in:
 → .copilot-instructions.md
 
 "I'm new, where do I start?"
-→ .github/README.md, then .github/QUICK_REFERENCE.md
+→ .github/notes.md, then .github/QUICK_REFERENCE.md
 ```
 
 ---
@@ -377,4 +383,7 @@ All files available in:
 ---
 
 **Happy documenting with AI!** 🚀📚
+
+
+
 

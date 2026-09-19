@@ -1,3 +1,9 @@
+---
+title: "🍇 006: Storing Unchanging Data with Tuples"
+aliases:
+  - "🍇 006: Storing Unchanging Data with Tuples"
+---
+
 # 🍇 006: Storing Unchanging Data with Tuples
 
 Tuples are Python's immutable, ordered collections—perfect for storing data you don't want to accidentally change. Once created, their contents cannot be modified, making them ideal for constants, configuration, and safe data passing. Tuples can hold any type, support fast access, and are often used for returning multiple values, dictionary keys, and more. Their immutability is a feature, not a limitation!
@@ -115,3 +121,6 @@ def tuple_usages():
 
 tuple_usages()
 ```
+
+
+

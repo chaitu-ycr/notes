@@ -1,3 +1,9 @@
+---
+title: "Removed Python Standard Library Modules"
+aliases:
+  - "Removed Python Standard Library Modules"
+---
+
 # Removed Python Standard Library Modules
 
 The modules described in this chapter have been removed from the Python standard library. They are documented here to help people find replacements or alternatives.
@@ -32,3 +38,6 @@ The modules described in this chapter have been removed from the Python standard
 | xdrlib         | Encode/decode XDR data. Use third-party libraries. |
 
 ---
+
+
+

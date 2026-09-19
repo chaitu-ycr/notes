@@ -1,3 +1,9 @@
+---
+title: "🧩 002: Pattern Matching with `match` and `case`"
+aliases:
+  - "🧩 002: Pattern Matching with `match` and `case`"
+---
+
 # 🧩 002: Pattern Matching with `match` and `case`
 
 Introduced in Python 3.10, the `match-case` statement is a powerful feature that acts like a supercharged `if-elif-else` chain. It's designed to handle complex conditional logic in a way that is both readable and efficient, especially when you're working with structured data.
@@ -92,3 +98,6 @@ match p:
 # Use guards (if ...) for extra conditions
 # Destructure lists, tuples, dicts, and even classes!
 ```
+
+
+

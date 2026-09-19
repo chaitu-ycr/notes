@@ -1,3 +1,9 @@
+---
+title: "🧵 004: Working with Text Using Strings"
+aliases:
+  - "🧵 004: Working with Text Using Strings"
+---
+
 # 🧵 004: Working with Text Using Strings
 
 Strings are one of the most fundamental data types in Python. They are how you represent and work with text, from a single character to an entire book. If your program needs to handle names, messages, file contents, or any other kind of textual data, you'll be using strings!
@@ -83,3 +89,6 @@ And so are you!
 """
 print(poem)
 ```
+
+
+

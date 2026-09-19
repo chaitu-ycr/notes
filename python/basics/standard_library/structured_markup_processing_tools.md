@@ -1,3 +1,8 @@
+---
+title: "Python Structured Markup Processing Tools"
+aliases:
+  - "Python Structured Markup Processing Tools"
+---
 
 # Python Structured Markup Processing Tools
 
@@ -201,3 +206,6 @@ parser.Parse('<root><child/></root>')
 ```
 
 ---
+
+
+

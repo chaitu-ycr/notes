@@ -1,3 +1,9 @@
+---
+title: "🚨 0x19: Read DTC Information"
+aliases:
+  - "🚨 0x19: Read DTC Information"
+---
+
 # 🚨 0x19: Read DTC Information
 
 **Purpose:** This is your "check engine light decoder." DTCs (Diagnostic Trouble Codes) are the breadcrumbs the ECU leaves when something goes wrong. This service lets you read what faults are stored, when they occurred, and their status.
@@ -210,3 +216,6 @@ Bit 7: warningIndicatorRequested     (MIL/check engine light)
 - **0x14 ClearDiagnosticInformation:** Clear DTCs
 - **0x85 ControlDTCSetting:** Enable/disable DTC recording
 - **0x22 ReadDataByIdentifier:** Read related live data
+
+
+

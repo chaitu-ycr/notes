@@ -1,3 +1,9 @@
+---
+title: "Python Internet Data Handling Modules"
+aliases:
+  - "Python Internet Data Handling Modules"
+---
+
 # Python Internet Data Handling Modules
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to internet data handling.
@@ -124,3 +130,6 @@ print(decoded)
 ```
 
 ---
+
+
+

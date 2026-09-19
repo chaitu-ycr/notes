@@ -1,3 +1,9 @@
+---
+title: "📋 005: Organizing Data with Lists"
+aliases:
+  - "📋 005: Organizing Data with Lists"
+---
+
 # 📋 005: Organizing Data with Lists
 
 Lists are Python's most versatile, ordered, and mutable collections. Use them for dynamic sequences, flexible data storage, and fast access by index. Lists can hold any type, be nested, and are essential for everything from data processing to games and web apps. Their mutability and rich methods make them the workhorse of Python programming.
@@ -142,3 +148,6 @@ def list_usages():
 
 list_usages()
 ```
+
+
+

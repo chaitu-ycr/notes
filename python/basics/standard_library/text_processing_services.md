@@ -1,3 +1,9 @@
+---
+title: "Output:"
+aliases:
+  - "Output:"
+---
+
 ## Python Text Processing Services
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to text processing:
@@ -286,3 +292,6 @@ import readline
 readline.parse_and_bind("tab: complete")
 # Tab completion is now available in the interactive shell
 ```
+
+
+

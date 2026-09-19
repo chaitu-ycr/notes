@@ -1,3 +1,9 @@
+---
+title: "🧩 010: Creating Reusable Code with Functions"
+aliases:
+  - "🧩 010: Creating Reusable Code with Functions"
+---
+
 # 🧩 010: Creating Reusable Code with Functions
 
 Functions are Python's reusable, named blocks of code. They let you organize logic, avoid repetition, and build modular, maintainable programs. Functions can take parameters, return values, and support flexible argument patterns. Mastering functions is key to writing clean, professional Python code.
@@ -100,3 +106,6 @@ def apply_func(f, value):
 print(apply_func(lambda x: x**2, 6))
 
 ```
+
+
+

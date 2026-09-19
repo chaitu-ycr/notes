@@ -1,3 +1,9 @@
+---
+title: "📦 0x36: Transfer Data"
+aliases:
+  - "📦 0x36: Transfer Data"
+---
+
 # 📦 0x36: Transfer Data
 
 **Purpose:** This is the "data pipeline" service. After initiating a download (0x34) or upload (0x35), you use 0x36 to actually transfer the data chunks. It's called repeatedly until all data is sent/received.
@@ -109,3 +115,6 @@ Response: 76 01 [data from ECU]
 - **0x34 RequestDownload:** Initiates download
 - **0x35 RequestUpload:** Initiates upload
 - **0x37 RequestTransferExit:** Finalize transfer
+
+
+

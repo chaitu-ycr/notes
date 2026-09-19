@@ -1,3 +1,9 @@
+---
+title: "Importing Modules in Python"
+aliases:
+  - "Importing Modules in Python"
+---
+
 # Importing Modules in Python
 
 This section covers Python standard libraries for importing modules, managing packages, and accessing resources.
@@ -127,3 +133,6 @@ print(sys.path)
 ```
 
 ---
+
+
+

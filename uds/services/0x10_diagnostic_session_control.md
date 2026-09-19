@@ -1,3 +1,9 @@
+---
+title: "🚪 0x10: Diagnostic Session Control"
+aliases:
+  - "🚪 0x10: Diagnostic Session Control"
+---
+
 # 🚪 0x10: Diagnostic Session Control
 
 **Purpose:** Think of this as "opening different doors" in the ECU. Each diagnostic session unlocks different capabilities. Default session is like the lobby—you can look around but not touch much. Extended session is like having a key card to restricted areas.
@@ -144,3 +150,6 @@ Response: 7F 10 12
 - **0x3E TesterPresent:** Keep session active
 - **0x27 SecurityAccess:** Required before accessing programming session
 - **0x11 ECUReset:** Often used after programming session
+
+
+

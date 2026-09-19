@@ -1,3 +1,9 @@
+---
+title: "🔰 CAN Bus Introduction"
+aliases:
+  - "🔰 CAN Bus Introduction"
+---
+
 # 🔰 CAN Bus Introduction
 
 ## What is CAN?
@@ -32,3 +38,6 @@ Before CAN, automotive electronics used point-to-point wiring.
 *   **Multi-Master:** Any node can start transmitting when the bus is free.
 *   **Broadcast:** All nodes receive all messages; filters determine relevance.
 *   **Event-Driven:** Messages are sent when events occur (or periodically).
+
+
+

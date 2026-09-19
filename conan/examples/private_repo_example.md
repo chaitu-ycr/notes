@@ -1,3 +1,9 @@
+---
+title: "🔒 Using Private Conan Repositories (Artifactory, etc.)"
+aliases:
+  - "🔒 Using Private Conan Repositories (Artifactory, etc.)"
+---
+
 # 🔒 Using Private Conan Repositories (Artifactory, etc.)
 
 ## Why Use This?
@@ -69,3 +75,6 @@ class PrivateDemoConan(ConanFile):
 
 💡 **Pro Tip:**
 Keep your remote and credentials out of source control. Use profiles and environment variables for maximum security and reproducibility!
+
+
+

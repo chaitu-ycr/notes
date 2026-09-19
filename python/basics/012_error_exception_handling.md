@@ -1,3 +1,9 @@
+---
+title: "🛡️ 012: Error and Exception Handling"
+aliases:
+  - "🛡️ 012: Error and Exception Handling"
+---
+
 # 🛡️ 012: Error and Exception Handling
 
 No matter how good a programmer you are, things can go wrong. Exception handling is your safety net for building robust, user-friendly, and reliable Python programs. Use try/except/else/finally to catch errors, clean up resources, and provide helpful feedback. Raising your own exceptions lets you signal problems in your logic.
@@ -93,3 +99,6 @@ try:
 except FileNotFoundError:
     print("File missing!")
 ```
+
+
+

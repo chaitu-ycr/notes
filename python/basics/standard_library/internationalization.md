@@ -1,3 +1,9 @@
+---
+title: "Python Internationalization Modules"
+aliases:
+  - "Python Internationalization Modules"
+---
+
 # Python Internationalization Modules
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to internationalization.
@@ -36,3 +42,6 @@ print(locale.format_string('%d', 1234567, grouping=True))  # '1,234,567' (in en_
 ```
 
 ---
+
+
+

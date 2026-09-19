@@ -1,3 +1,9 @@
+---
+title: "🐍 Beginner's Guide: Python Extension Module with pybind11, Conan & CMake"
+aliases:
+  - "🐍 Beginner's Guide: Python Extension Module with pybind11, Conan & CMake"
+---
+
 # 🐍 Beginner's Guide: Python Extension Module with pybind11, Conan & CMake
 
 ## Why Use This?
@@ -93,3 +99,6 @@ print(mymodule.some_function())
 - Use `conanfile.py` and `conan build` for reproducible, automated builds.
 - pybind11 gives you a true Python module experience (with docstrings, exceptions, etc.).
 - For more advanced bindings, see the [pybind11 docs](https://pybind11.readthedocs.io/en/stable/).
+
+
+

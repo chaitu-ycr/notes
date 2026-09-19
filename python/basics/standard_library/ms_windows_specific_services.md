@@ -1,3 +1,9 @@
+---
+title: "MS Windows Specific Services"
+aliases:
+  - "MS Windows Specific Services"
+---
+
 # MS Windows Specific Services
 
 This section covers Python standard libraries that provide services specific to Microsoft Windows.
@@ -44,3 +50,6 @@ winsound.Beep(1000, 500)  # Beep at 1000 Hz for 500 ms
 ```
 
 ---
+
+
+

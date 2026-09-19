@@ -1,3 +1,9 @@
+---
+title: "🤖 Usecase: Creating Web Demos with `gradio`"
+aliases:
+  - "🤖 Usecase: Creating Web Demos with `gradio`"
+---
+
 # 🤖 Usecase: Creating Web Demos with `gradio`
 
 You've just trained an amazing machine learning model or written a cool Python function. Now you want to share it with the world, or at least with your non-programmer colleagues. How do you do that? Building a web application from scratch is complicated.
@@ -69,3 +75,6 @@ fun_ui = gr.Interface(
 # Use .launch(share=True) for public demos
 # Combine with ML models for instant web apps
 ```
+
+
+

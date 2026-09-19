@@ -1,3 +1,9 @@
+---
+title: "🔍 0x23: Read Memory By Address"
+aliases:
+  - "🔍 0x23: Read Memory By Address"
+---
+
 # 🔍 0x23: Read Memory By Address
 
 **Purpose:** Direct memory access—bypass DIDs and read raw ECU memory. Unlike 0x22 (which reads structured data), this service lets you specify an exact memory address and read bytes from it. It's like poking around in the ECU's RAM/Flash with a hex editor.
@@ -95,3 +101,6 @@ Response: 63 AA BB CC DD EE FF 11 22 33 44 55 66 77 88 99 00
 - **0x22 ReadDataByIdentifier:** Structured alternative
 - **0x3D WriteMemoryByAddress:** Write counterpart
 - **0x27 SecurityAccess:** Often required
+
+
+

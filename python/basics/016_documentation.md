@@ -1,3 +1,9 @@
+---
+title: "📝 016: Documenting Your Code"
+aliases:
+  - "📝 016: Documenting Your Code"
+---
+
 # 📝 016: Documenting Your Code
 
 Writing code that works is only half the battle. Writing code that others (and your future self!) can understand, use, and maintain is just as important. Good documentation is the key to turning a simple script into a professional, long-lasting piece of software.
@@ -119,3 +125,6 @@ def multiply(a, b):
     """
     return a * b
 ```
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "🖼️ Usecase: Building GUIs with `tkinter`"
+aliases:
+  - "🖼️ Usecase: Building GUIs with `tkinter`"
+---
+
 # 🖼️ Usecase: Building GUIs with `tkinter`
 
 **Tkinter** (short for "Tk interface") is Python's standard, built-in library for creating graphical user interfaces (GUIs). Because it comes with Python, you don't need to install anything extra, making it the quickest and most straightforward way to build simple desktop applications, tools, and utilities.
@@ -62,3 +68,6 @@ color_btn.pack(pady=5)
 # Use root.mainloop() at the end
 # Use customtkinter for modern look
 ```
+
+
+

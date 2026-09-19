@@ -1,3 +1,9 @@
+---
+title: "Custom Python Interpreters"
+aliases:
+  - "Custom Python Interpreters"
+---
+
 # Custom Python Interpreters
 
 This section covers Python standard libraries for building and working with custom interpreters.
@@ -35,3 +41,6 @@ exec(code_obj)
 ```
 
 ---
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "Debugging and Profiling in Python"
+aliases:
+  - "Debugging and Profiling in Python"
+---
+
 # Debugging and Profiling in Python
 
 This section covers Python standard libraries for debugging, profiling, and auditing code execution.
@@ -142,3 +148,6 @@ for stat in top_stats[:10]:
 ```
 
 ---
+
+
+

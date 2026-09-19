@@ -1,3 +1,9 @@
+---
+title: "📁 Usecase: Reading and Writing Files"
+aliases:
+  - "📁 Usecase: Reading and Writing Files"
+---
+
 # 📁 Usecase: Reading and Writing Files
 
 Programs need a way to save data permanently so it can be used later. Whether you're saving user preferences, logging application errors, or processing a large dataset, you need to interact with files. **File handling** (also known as File I/O) is the way your Python program reads from and writes to files on your computer.
@@ -71,3 +77,6 @@ with open("data.json", "r") as f:
     loaded = json.load(f)
     print(loaded)
 ```
+
+
+

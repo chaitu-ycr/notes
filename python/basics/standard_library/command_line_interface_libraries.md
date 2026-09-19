@@ -1,3 +1,9 @@
+---
+title: "Python Command-line Interface Libraries"
+aliases:
+  - "Python Command-line Interface Libraries"
+---
+
 # Python Command-line Interface Libraries
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to command-line interfaces.
@@ -172,3 +178,6 @@ if __name__ == '__main__':
 ```
 
 ---
+
+
+

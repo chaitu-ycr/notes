@@ -1,3 +1,9 @@
+---
+title: "Python Standard Library Modules"
+aliases:
+  - "Python Standard Library Modules"
+---
+
 # Python Standard Library Modules
 
 The Python standard library is a collection of modules and packages included with Python, providing powerful tools for a wide range of programming tasks—from file I/O and networking to data manipulation and concurrency.
@@ -97,3 +103,6 @@ The Python standard library is a collection of modules and packages included wit
 For a complete list and details, refer to the [official Python documentation](https://docs.python.org/3/library/).
 
 ---
+
+
+

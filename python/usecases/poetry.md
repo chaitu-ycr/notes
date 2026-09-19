@@ -1,3 +1,9 @@
+---
+title: "✒️ Usecase: Managing Projects with `Poetry`"
+aliases:
+  - "✒️ Usecase: Managing Projects with `Poetry`"
+---
+
 # ✒️ Usecase: Managing Projects with `Poetry`
 
 For a long time, managing Python projects involved a messy combination of tools: `venv` for virtual environments, a `requirements.txt` file for dependencies (which could easily become outdated), and `setup.py` for packaging. It worked, but it was clunky.
@@ -41,7 +47,7 @@ The `poetry new` command creates a standardized, professional project structure.
 ```bash
 poetry new my-awesome-project
 ```
-This creates a folder `my-awesome-project/` with a `pyproject.toml` file, a `README.md`, a tests folder, and a source folder.
+This creates a folder `my-awesome-project/` with a `pyproject.toml` file, a `notes.md`, a tests folder, and a source folder.
 
 ### 3. The `pyproject.toml` File
 
@@ -118,3 +124,6 @@ This creates a `.tar.gz` (source archive) and a `.whl` (wheel) file in a new `di
 poetry publish
 ```
 Poetry provides a robust, modern workflow that takes the guesswork out of managing Python projects.
+
+
+

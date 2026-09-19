@@ -1,3 +1,9 @@
+---
+title: "🧹 0x14: Clear Diagnostic Information"
+aliases:
+  - "🧹 0x14: Clear Diagnostic Information"
+---
+
 # 🧹 0x14: Clear Diagnostic Information
 
 **Purpose:** The "reset" button for fault memory. This service clears all stored DTCs (Diagnostic Trouble Codes) and associated data like freeze frames and test results. It's like a clean slate for diagnostics.
@@ -177,3 +183,6 @@ Then verify:
 - **0x85 ControlDTCSetting:** Disable DTC storage during testing
 - **0x10 DiagnosticSessionControl:** May need extended session to clear
 - **0x27 SecurityAccess:** May be required before clearing
+
+
+

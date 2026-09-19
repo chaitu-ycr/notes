@@ -1,3 +1,9 @@
+---
+title: "💓 0x3E: Tester Present"
+aliases:
+  - "💓 0x3E: Tester Present"
+---
+
 # 💓 0x3E: Tester Present
 
 **Purpose:** This is the "keep-alive" heartbeat. When you enter an extended diagnostic session, the ECU will automatically return to default session after ~5 seconds of inactivity. TesterPresent tells the ECU "I'm still here, don't timeout!" It's like wiggling the mouse to prevent your computer from locking.
@@ -217,3 +223,6 @@ exit_session()
 
 - **0x10 DiagnosticSessionControl:** Creates sessions that need TesterPresent
 - All services that take time to execute (0x34-0x37 download/upload, 0x31 routines)
+
+
+

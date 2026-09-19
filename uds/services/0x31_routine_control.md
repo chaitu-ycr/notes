@@ -1,3 +1,9 @@
+---
+title: "🎮 0x31: Routine Control"
+aliases:
+  - "🎮 0x31: Routine Control"
+---
+
 # 🎮 0x31: Routine Control
 
 **Purpose:** This is the "remote control" for ECU self-tests and procedures. It lets you start, stop, and check the results of built-in routines like actuator tests, self-diagnostics, or calibration procedures. Think of it as pressing buttons on the ECU's control panel.
@@ -225,3 +231,6 @@ Step 3: Check erase status (while sending 3E 80 keep-alive)
 - **0x27 SecurityAccess:** Usually required for routines
 - **0x3E TesterPresent:** Keep session alive during long routines
 - **0x22 ReadDataByIdentifier:** Read related data before/after
+
+
+

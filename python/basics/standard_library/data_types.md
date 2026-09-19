@@ -1,3 +1,8 @@
+---
+title: "Python Data Types Services"
+aliases:
+  - "Python Data Types Services"
+---
 
 # Python Data Types Services
 
@@ -241,3 +246,6 @@ print(order)  # [3, 2, 1]
 ```
 
 ---
+
+
+

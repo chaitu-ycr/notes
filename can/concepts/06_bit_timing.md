@@ -1,3 +1,9 @@
+---
+title: "🔬 Bit Timing (Expert Topic)"
+aliases:
+  - "🔬 Bit Timing (Expert Topic)"
+---
+
 # 🔬 Bit Timing (Expert Topic)
 
 A "bit" on the CAN bus isn't just a simple high/low pulse. It is a complex interval divided into segments to ensure all nodes—even with slightly different clock speeds—can stay synchronized.
@@ -47,3 +53,6 @@ The maximum number of `tq` that the controller can lengthen or shorten a bit dur
     *   Phase2 = 16 - 13 = 3.
     *   Let Prop = 6, Phase1 = 6.
     *   **Result:** Sync=1, Prop=6, Phase1=6, Phase2=3. Total=16. Sample=81%.
+
+
+

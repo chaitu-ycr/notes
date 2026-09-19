@@ -1,3 +1,9 @@
+---
+title: "Python Data Compression and Archiving Modules"
+aliases:
+  - "Python Data Compression and Archiving Modules"
+---
+
 # Python Data Compression and Archiving Modules
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to data compression and archiving.
@@ -130,3 +136,6 @@ with tarfile.open('example.tar', 'r') as tf:
 ```
 
 ---
+
+
+

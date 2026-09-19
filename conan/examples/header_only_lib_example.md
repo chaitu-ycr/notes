@@ -1,3 +1,9 @@
+---
+title: "📚 Header-Only Library Example with Conan"
+aliases:
+  - "📚 Header-Only Library Example with Conan"
+---
+
 # 📚 Header-Only Library Example with Conan
 
 ## Why Use This?
@@ -62,3 +68,5 @@ target_include_directories(myapp PRIVATE ${myheaderlib_INCLUDE_DIRS})
 
 💡 **Pro Tip:**
 - You can publish your header-only library to Conan Center or share privately for instant reuse!
+
+

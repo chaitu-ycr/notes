@@ -1,3 +1,9 @@
+---
+title: "📦 Using Prebuilt Binaries from Conan Center"
+aliases:
+  - "📦 Using Prebuilt Binaries from Conan Center"
+---
+
 # 📦 Using Prebuilt Binaries from Conan Center
 
 ## Why Use This?
@@ -62,3 +68,5 @@ target_link_libraries(myapp PRIVATE ZLIB::ZLIB)
 💡 **Pro Tip:**
 - Prebuilt binaries save time and avoid toolchain headaches!
 - Try other libraries from Conan Center—just update the `requires` line!
+
+

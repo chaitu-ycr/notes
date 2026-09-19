@@ -1,3 +1,9 @@
+---
+title: "🔐 0x27: Security Access"
+aliases:
+  - "🔐 0x27: Security Access"
+---
+
 # 🔐 0x27: Security Access
 
 **Purpose:** This is the "password check" service. Some operations (like writing calibration data or flashing software) are dangerous, so the ECU requires proof that you're authorized. It's a challenge-response system: the ECU gives you a random "seed," you transform it using a secret algorithm into a "key," and send it back.
@@ -226,3 +232,6 @@ Step 3: Send key
 - **0x2E WriteDataByIdentifier:** Often requires security
 - **0x34-0x37 Download/Upload:** Programming requires security
 - **0x3E TesterPresent:** Keep session alive to maintain security
+
+
+

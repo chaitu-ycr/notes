@@ -1,3 +1,9 @@
+---
+title: "📖 0x22: Read Data By Identifier"
+aliases:
+  - "📖 0x22: Read Data By Identifier"
+---
+
 # 📖 0x22: Read Data By Identifier
 
 **Purpose:** This is your "ask anything" service. Want to know the VIN? Battery voltage? Software version? ECU temperature? Each piece of data has a unique 2-byte ID (called a DID), and this service lets you request it.
@@ -174,3 +180,6 @@ Decoded VIN: W D B Z Z Z 1 K Z 0 0 9 1 2 3 4 5 6
 - **0x2E WriteDataByIdentifier:** Write data to a DID
 - **0x2C DynamicallyDefineDataIdentifier:** Create custom composite DIDs
 - **0x10 DiagnosticSessionControl:** Some DIDs only readable in certain sessions
+
+
+

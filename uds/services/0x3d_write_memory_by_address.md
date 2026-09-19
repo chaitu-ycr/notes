@@ -1,3 +1,9 @@
+---
+title: "✏️ 0x3D: Write Memory By Address"
+aliases:
+  - "✏️ 0x3D: Write Memory By Address"
+---
+
 # ✏️ 0x3D: Write Memory By Address
 
 **Purpose:** Direct memory writing—the opposite of 0x23. Write raw bytes to a specific ECU memory address. Extremely dangerous if misused!
@@ -82,3 +88,6 @@ Step 2: Write
 - **0x23 ReadMemoryByAddress:** Read counterpart
 - **0x2E WriteDataByIdentifier:** Safer structured alternative
 - **0x27 SecurityAccess:** Always required
+
+
+

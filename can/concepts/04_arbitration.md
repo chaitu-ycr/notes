@@ -1,3 +1,9 @@
+---
+title: "⚖️ Arbitration (Priority)"
+aliases:
+  - "⚖️ Arbitration (Priority)"
+---
+
 # ⚖️ Arbitration (Priority)
 
 How does CAN prevent collisions when two nodes try to talk at once? It uses a mechanism called **CSMA/CR** (Carrier Sense Multiple Access / Collision Resolution), also known as **Bitwise Arbitration**.
@@ -29,3 +35,6 @@ Imagine Node A (ID `0x100`) and Node B (ID `0x110`) start transmitting at the ex
     *   `0x7FF` is the lowest priority (Standard CAN).
 2.  **Non-Destructive:** The winning message continues without *any* delay or corruption. Bandwidth is not wasted on collisions.
 3.  **Latency:** High-priority messages (Engine, Brakes) have guaranteed low latency. Low-priority messages (Door locks, Radio) wait.
+
+
+

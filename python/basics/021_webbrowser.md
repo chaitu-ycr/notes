@@ -1,3 +1,9 @@
+---
+title: "🌐 Usecase: Opening Web Pages with `webbrowser`"
+aliases:
+  - "🌐 Usecase: Opening Web Pages with `webbrowser`"
+---
+
 # 🌐 Usecase: Opening Web Pages with `webbrowser`
 
 Sometimes, all you need your script to do is open a web page for the user—maybe to show them a documentation site, a report you've just generated, or the login page for a service. You don't need to scrape data or interact with the page, you just need to launch it.
@@ -43,3 +49,6 @@ for url in urls:
 # Use try/except for browser selection
 # No need for extra dependencies
 ```
+
+
+

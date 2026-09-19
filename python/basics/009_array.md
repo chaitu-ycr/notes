@@ -1,3 +1,9 @@
+---
+title: "🧮 009: Memory-Efficient Arrays with the `array` Module"
+aliases:
+  - "🧮 009: Memory-Efficient Arrays with the `array` Module"
+---
+
 # 🧮 009: Memory-Efficient Arrays with the `array` Module
 
 The `array` module provides memory-efficient, typed, homogeneous sequences for numbers. Use `array.array` when you need to store millions of numbers and memory matters, or when you need to interface with binary data or C libraries. Lists are more flexible, NumPy arrays are faster for math, but `array.array` is built-in and great for compact storage of numeric data.
@@ -78,3 +84,5 @@ def array_usages():
 
 array_usages()
 ```
+
+

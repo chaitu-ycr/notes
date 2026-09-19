@@ -1,3 +1,9 @@
+---
+title: "Python Modules with Command-Line Interface (CLI)"
+aliases:
+  - "Python Modules with Command-Line Interface (CLI)"
+---
+
 # Python Modules with Command-Line Interface (CLI)
 
 The following Python standard library modules provide a command-line interface (CLI). You can run them directly from the terminal using `python -m <module>` or similar commands.
@@ -58,3 +64,6 @@ The following Python standard library modules provide a command-line interface (
 | zipfile              | Zip file operations: `python -m zipfile`            |
 
 ---
+
+
+

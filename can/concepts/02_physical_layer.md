@@ -1,3 +1,9 @@
+---
+title: "🔌 CAN Physical Layer"
+aliases:
+  - "🔌 CAN Physical Layer"
+---
+
 # 🔌 CAN Physical Layer
 
 The physical layer defines how the bits are actually transmitted on the wires. CAN uses **Differential Signaling**, which is the secret sauce behind its noise immunity.
@@ -40,3 +46,6 @@ The longer the bus, the slower you must go (due to propagation delay).
 *   **1 Mbit/s:** ~40 meters
 *   **500 kbit/s:** ~100 meters
 *   **125 kbit/s:** ~500 meters
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "🐛 Debugging Story: [The Error That Stole Christmas]"
+aliases:
+  - "🐛 Debugging Story: [The Error That Stole Christmas]"
+---
+
 # 🐛 Debugging Story: [The Error That Stole Christmas]
 
 **Date:** `YYYY-MM-DD`
@@ -52,5 +58,8 @@
 ---
 
 ## 🔗 Related Resources
-- [Issue Ticket #123](link)
-- [Docker Networking Docs](link)
+- [Issue Ticket #123](https://example.com/issues/123)
+- [Docker Networking Docs](https://docs.docker.com/network/)
+
+
+

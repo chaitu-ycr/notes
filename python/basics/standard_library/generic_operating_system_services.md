@@ -1,3 +1,9 @@
+---
+title: "Python Generic Operating System Services Modules"
+aliases:
+  - "Python Generic Operating System Services Modules"
+---
+
 # Python Generic Operating System Services Modules
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to operating system services.
@@ -147,3 +153,6 @@ print(ctypes.sizeof(ctypes.c_int))  # Size of C int type
 ```
 
 ---
+
+
+

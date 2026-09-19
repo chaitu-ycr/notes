@@ -1,3 +1,9 @@
+---
+title: "📤 0x35: Request Upload"
+aliases:
+  - "📤 0x35: Request Upload"
+---
+
 # 📤 0x35: Request Upload
 
 **Purpose:** "I want to receive a file from you." This initiates an upload (from ECU TO tester) session. It's the opposite of 0x34—you're asking the ECU to send you data (e.g., reading out current firmware).
@@ -62,3 +68,6 @@ Same as 0x34 RequestDownload.
 - **0x34 RequestDownload:** Opposite direction
 - **0x36 TransferData:** Actual data transfer
 - **0x37 RequestTransferExit:** Complete upload
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "🌀 013: The Iterator Protocol"
+aliases:
+  - "🌀 013: The Iterator Protocol"
+---
+
 # 🌀 013: The Iterator Protocol
 
 The iterator protocol powers Python's for loops, memory efficiency, and lazy evaluation. Iterables can be looped over; iterators produce items one at a time. Mastering iterators lets you process huge data, build custom sequences, and write elegant, Pythonic code.
@@ -83,3 +89,6 @@ gen = (x*x for x in range(3))
 for val in gen:
     print(val)
 ```
+
+
+

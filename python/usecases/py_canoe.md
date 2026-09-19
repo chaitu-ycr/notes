@@ -1,3 +1,9 @@
+---
+title: "🛶 Usecase: Automating CANoe with `py_canoe`"
+aliases:
+  - "🛶 Usecase: Automating CANoe with `py_canoe`"
+---
+
 # 🛶 Usecase: Automating CANoe with `py_canoe`
 
 **Vector CANoe** is the industry-standard tool for developing, testing, and analyzing automotive electronic control units (ECUs) and networks. While it's incredibly powerful for manual testing and simulation, its true power in a modern workflow is unleashed through **automation**.
@@ -55,3 +61,6 @@ canoe.stop_measurement()
 # Integrate with pandas/matplotlib for analysis
 # Use in CI/CD pipelines for regression testing
 ```
+
+
+

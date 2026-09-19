@@ -1,3 +1,9 @@
+---
+title: "🧐 Usecase: Pattern Matching with Regular Expressions"
+aliases:
+  - "🧐 Usecase: Pattern Matching with Regular Expressions"
+---
+
 # 🧐 Usecase: Pattern Matching with Regular Expressions
 
 Simple string methods like `.find()` are great if you know the exact text you're looking for. But what if you need to find a *pattern*? For example, how would you find all the email addresses in a document, or extract all the phone numbers from a web page?
@@ -53,3 +59,6 @@ print(is_strong("Abc12345"))
 # Use ? for optional
 # Use ^ and $ for start/end anchors
 ```
+
+
+

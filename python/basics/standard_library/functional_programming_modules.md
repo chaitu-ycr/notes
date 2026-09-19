@@ -1,3 +1,9 @@
+---
+title: "Python Functional Programming Modules"
+aliases:
+  - "Python Functional Programming Modules"
+---
+
 # Python Functional Programming Modules
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to functional programming.
@@ -71,3 +77,6 @@ print(list(map(operator.neg, lst)))  # [-1, -2, -3]
 ```
 
 ---
+
+
+

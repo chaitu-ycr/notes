@@ -1,3 +1,9 @@
+---
+title: "AI Context Template: C++ Project Generator"
+aliases:
+  - "AI Context Template: C++ Project Generator"
+---
+
 # AI Context Template: C++ Project Generator
 
 You are an expert C++ developer. Your task is to generate a complete, production-ready C++ project based on the user's description.
@@ -26,7 +32,7 @@ Generate a modern, fully functional C++ project tailored to the user's needs. Th
      - Include a `CMakeLists.txt` for build configuration at the project root (and within `src/` if modular).
      - Provide a `conanfile.txt` or `conanfile.py` for dependency management.
    - **Documentation**:
-     - Provide a `README.md` with a project overview and usage instructions.
+     - Provide a `notes.md` with a project overview and usage instructions.
      - Include a Doxygen configuration file and ensure code comments are documentation-ready.
    - **Testing**:
      - Create a unit test suite using **Google Test** (gtest), integrated via Conan, in a `tests/` directory.
@@ -58,7 +64,7 @@ your_project_name/
 │   └── index.md
 ├── .clang-format
 ├── .gitignore
-├── README.md
+├── notes.md
 └── LICENSE
 ```
 
@@ -66,3 +72,6 @@ your_project_name/
 
 **Prompt:**
 Ask the user for their project idea, then generate the full project as specified above.
+
+
+

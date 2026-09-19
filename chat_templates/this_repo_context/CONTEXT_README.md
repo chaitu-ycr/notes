@@ -1,3 +1,9 @@
+---
+title: "📋 AI Context Files - Summary"
+aliases:
+  - "📋 AI Context Files - Summary"
+---
+
 # 📋 AI Context Files - Summary
 
 ## 📁 Files Created
@@ -198,12 +204,12 @@ Your repository now has professional-grade AI context templates that will:
 
 ### Next Steps:
 
-1. **Optional:** Link to these files from your main `README.md`:
+1. **Optional:** Link to these files from your main `notes.md`:
    ```markdown
    ## 🤖 Contributing Documentation
 
-   New to documenting here? Check [chat_templates/this_repo_context/quick_reference.md](chat_templates/this_repo_context/quick_reference.md) for style guide
-   and [chat_templates/this_repo_context/usage_guide.md](chat_templates/this_repo_context/usage_guide.md) for workflow tips.
+   New to documenting here? Check [quick_reference.md](./quick_reference.md) for style guide
+   and [usage_guide.md](./usage_guide.md) for workflow tips.
    ```
 
 2. **Test it:** Open an AI chat and reference one of the templates
@@ -215,3 +221,6 @@ Your repository now has professional-grade AI context templates that will:
 ---
 
 **Happy documenting with AI assistance!** 🚀📚
+
+
+

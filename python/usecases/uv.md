@@ -1,3 +1,9 @@
+---
+title: "⚡️ Usecase: Supercharging Your Workflow with `uv`"
+aliases:
+  - "⚡️ Usecase: Supercharging Your Workflow with `uv`"
+---
+
 # ⚡️ Usecase: Supercharging Your Workflow with `uv`
 
 > "Waiting for `pip install` is the modern equivalent of watching paint dry, but with more dependency conflicts."
@@ -135,3 +141,6 @@ uv run script.py
 
 > [!NOTE]
 > **Compatibility:** `uv` is very compatible, but some edge-case packages with weird build scripts might still need standard `pip`. But for 99% of cases, `uv` is the way.
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "⚡ 014: Simple Iterators with Generators"
+aliases:
+  - "⚡ 014: Simple Iterators with Generators"
+---
+
 # ⚡ 014: Simple Iterators with Generators
 
 Generators are Python's elegant way to create memory-efficient, lazy iterators with minimal code. Use generator functions (with yield) or generator expressions for large or infinite sequences, automatic state management, and readable, Pythonic code.
@@ -92,3 +98,6 @@ def main_gen():
 for x in main_gen():
     print(x)
 ```
+
+
+

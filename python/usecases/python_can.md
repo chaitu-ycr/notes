@@ -1,3 +1,9 @@
+---
+title: "🚌 Usecase: Interacting with CAN Hardware with `python-can`"
+aliases:
+  - "🚌 Usecase: Interacting with CAN Hardware with `python-can`"
+---
+
 # 🚌 Usecase: Interacting with CAN Hardware with `python-can`
 
 To work with a real CAN bus, your computer needs a physical hardware interface (e.g., a Vector VN1630, a PEAK-System PCAN-USB, or a Kvaser Leaf). The problem is that every hardware vendor provides a different driver and API.
@@ -57,3 +63,6 @@ for m in reader:
 # Use bus.send_periodic for cyclic messages
 # Use bus.shutdown() to close bus manually
 ```
+
+
+

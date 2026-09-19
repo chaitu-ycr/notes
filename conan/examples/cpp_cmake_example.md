@@ -1,3 +1,9 @@
+---
+title: "🛠️ Conan + CMake Example (C++)"
+aliases:
+  - "🛠️ Conan + CMake Example (C++)"
+---
+
 # 🛠️ Conan + CMake Example (C++)
 
 ## Why Use This?
@@ -81,3 +87,6 @@ conan build . --build-folder=build
 💡 **Pro Tips:**
 - Try other libraries from Conan Center—dependency management is easy!
 - Keep your build steps automated for fast, reliable development.
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "Python Networking and Interprocess Communication Modules"
+aliases:
+  - "Python Networking and Interprocess Communication Modules"
+---
+
 # Python Networking and Interprocess Communication Modules
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to networking and interprocess communication.
@@ -131,3 +137,6 @@ with open('example.txt', 'r+b') as f:
 ```
 
 ---
+
+
+

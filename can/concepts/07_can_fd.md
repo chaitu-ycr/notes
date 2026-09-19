@@ -1,3 +1,9 @@
+---
+title: "🚀 CAN FD (Flexible Data-Rate)"
+aliases:
+  - "🚀 CAN FD (Flexible Data-Rate)"
+---
+
 # 🚀 CAN FD (Flexible Data-Rate)
 
 **CAN FD** is the modern successor to Classical CAN. It addresses the two main limitations of the original protocol: **Speed** and **Payload Size**.
@@ -39,3 +45,6 @@ For values 0-8, DLC works the same. For 9-15, it maps to larger sizes:
 *   **CAN FD controllers** can read Classical CAN frames.
 *   **Classical CAN controllers** CANNOT read CAN FD frames (they will see them as errors).
 *   *Implication:* You cannot mix old and new controllers on the same bus if you intend to use FD frames.
+
+
+

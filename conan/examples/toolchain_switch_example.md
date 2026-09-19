@@ -1,3 +1,9 @@
+---
+title: "🛠️ Switching Compilers & Toolchains with Conan Profiles"
+aliases:
+  - "🛠️ Switching Compilers & Toolchains with Conan Profiles"
+---
+
 # 🛠️ Switching Compilers & Toolchains with Conan Profiles
 
 ## Why Care?
@@ -37,3 +43,5 @@ conan build . --build-folder=build-clang
 
 💡 **Pro Tip:**
 Profiles make switching compilers a breeze for cross-platform development and automated CI pipelines!
+
+

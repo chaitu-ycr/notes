@@ -1,3 +1,9 @@
+---
+title: "🖼️ Usecase: Image Manipulation with `Pillow`"
+aliases:
+  - "🖼️ Usecase: Image Manipulation with `Pillow`"
+---
+
 # 🖼️ Usecase: Image Manipulation with `Pillow`
 
 While libraries like OpenCV are built for complex computer vision analysis, sometimes you just need to perform simple image manipulations: resize a user's profile picture, add a watermark to a photo, or convert a batch of JPEGs to PNGs. For these tasks, **Pillow** is the perfect tool.
@@ -60,3 +66,6 @@ blank.show()
 # Use .save() to export in different formats
 # Use ImageDraw for shapes and text
 ```
+
+
+

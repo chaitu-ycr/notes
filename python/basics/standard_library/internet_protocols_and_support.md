@@ -1,3 +1,9 @@
+---
+title: "Python Internet Protocols and Support Modules"
+aliases:
+  - "Python Internet Protocols and Support Modules"
+---
+
 # Python Internet Protocols and Support Modules
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to internet protocols and support.
@@ -334,3 +340,6 @@ print(net.num_addresses)  # 256
 ```
 
 ---
+
+
+

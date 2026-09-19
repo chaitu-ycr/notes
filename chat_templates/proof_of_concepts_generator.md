@@ -1,3 +1,8 @@
+---
+title: "AI Context Template: Proof of Concept (PoC) Idea Generator"
+aliases:
+  - "AI Context Template: Proof of Concept (PoC) Idea Generator"
+---
 
 # AI Context Template: Proof of Concept (PoC) Idea Generator
 
@@ -87,3 +92,6 @@ For each of the 3 PoC ideas, use the following structure:
 **After generating PoC ideas:**
 - [ ] All proposals are feasible and provide measurable value.
 - [ ] Output is clear, well-structured, and ready for user review.
+
+
+

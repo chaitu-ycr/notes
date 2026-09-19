@@ -1,3 +1,9 @@
+---
+title: "🖼️ Usecase: Computer Vision with OpenCV"
+aliases:
+  - "🖼️ Usecase: Computer Vision with OpenCV"
+---
+
 # 🖼️ Usecase: Computer Vision with OpenCV
 
 **OpenCV** (Open Source Computer Vision Library) is the world's most popular library for computer vision. It's a massive, powerful, and highly optimized tool that provides everything you need to load, process, analyze, and save images and videos. If you want to work with visual data in Python, OpenCV is the place to start.
@@ -66,3 +72,6 @@ cv2.imwrite("output.jpg", img)
 # Use cv2.destroyAllWindows() to close windows
 # Images are NumPy arrays, so use slicing and math!
 ```
+
+
+

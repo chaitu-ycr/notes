@@ -1,3 +1,9 @@
+---
+title: "✅ 0x37: Request Transfer Exit"
+aliases:
+  - "✅ 0x37: Request Transfer Exit"
+---
+
 # ✅ 0x37: Request Transfer Exit
 
 **Purpose:** "We're done transferring data." This closes the download/upload session started by 0x34 or 0x35. Think of it as clicking "Finish" on a file transfer.
@@ -80,3 +86,6 @@ Response: 77
 - **0x34 RequestDownload:** Start download
 - **0x35 RequestUpload:** Start upload
 - **0x36 TransferData:** Transfer blocks
+
+
+

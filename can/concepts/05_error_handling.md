@@ -1,3 +1,9 @@
+---
+title: "🛡️ Error Handling & Confinement"
+aliases:
+  - "🛡️ Error Handling & Confinement"
+---
+
 # 🛡️ Error Handling & Confinement
 
 CAN is famous for its robustness. It has a built-in "immune system" to detect errors and isolate faulty nodes.
@@ -44,3 +50,6 @@ Every CAN controller has two counters: **TEC** (Transmit Error Counter) and **RE
 *   **Tx Error:** TEC + 8 (Sender assumes it is likely the problem).
 
 > **Expert Insight:** This is why a node transmitting into an open circuit (no termination/no other nodes) goes Bus Off very quickly. It sends, gets no ACK (Error), TEC+8. Retries, no ACK, TEC+8... until 255.
+
+
+

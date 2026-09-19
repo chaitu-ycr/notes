@@ -1,3 +1,9 @@
+---
+title: "🧩 Python Decorators"
+aliases:
+  - "🧩 Python Decorators"
+---
+
 # 🧩 Python Decorators
 
 Decorators are Python's powerful way to modify or enhance functions and classes without changing their source code. They promote code reuse, separation of concerns, and expressive, modular design. Use decorators for logging, authentication, error handling, caching, and more.
@@ -150,3 +156,6 @@ def message():
     return "System running."
 print(message())
 ```
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "📦 CAN Frame Structure"
+aliases:
+  - "📦 CAN Frame Structure"
+---
+
 # 📦 CAN Frame Structure
 
 Data on the CAN bus is sent in packets called **Frames**. The most common is the **Data Frame**.
@@ -52,3 +58,6 @@ Uses a 29-bit Identifier (11-bit Base ID + 18-bit Extension).
 
 ![Bit Stuffing Example 1](data/stuff_error_1.png)
 ![Bit Stuffing Example 2](data/stuff_error_2.png)
+
+
+

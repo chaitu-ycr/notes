@@ -1,3 +1,9 @@
+---
+title: "🤖 Using GitHub Copilot with This Repository"
+aliases:
+  - "🤖 Using GitHub Copilot with This Repository"
+---
+
 # 🤖 Using GitHub Copilot with This Repository
 
 A guide to getting the best results from Copilot for your learning documentation.
@@ -483,4 +489,7 @@ Together: 🚀 Amazing documentation
 - Your existing repo files - The best examples of what you want
 
 Happy documenting! 📚✨
+
+
+
 

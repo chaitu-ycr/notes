@@ -1,3 +1,9 @@
+---
+title: "🧠 Concept: [Complex Topic Name]"
+aliases:
+  - "🧠 Concept: [Complex Topic Name]"
+---
+
 # 🧠 Concept: [Complex Topic Name]
 
 **ELI5 Level:** `[Toddler / High Schooler / Grad Student]`
@@ -58,4 +64,7 @@ def complex_concept_simplified():
 ## 🏁 Summary
 *One sentence takeaway.*
 > "[Concept] allows us to [Benefit] by [Mechanism]."
+
+
+
 

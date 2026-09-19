@@ -1,5 +1,8 @@
-
-
+---
+title: "UDS Software Programming Procedure (ISO 14229)"
+aliases:
+  - "UDS Software Programming Procedure (ISO 14229)"
+---
 
 ---
 # UDS Software Programming Procedure (ISO 14229)
@@ -190,3 +193,6 @@ Validate and restore ECU:
 25. **Return to default session:**
     - Send DiagnosticSessionControl (0x10 0x01) to return ECU to normal operational mode.
     - Resume CANoe simulation of normal network messages.
+
+
+

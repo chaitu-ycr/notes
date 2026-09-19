@@ -1,3 +1,9 @@
+---
+title: "🏗️ Complete C++ Shared DLL Project with Conan & CMake"
+aliases:
+  - "🏗️ Complete C++ Shared DLL Project with Conan & CMake"
+---
+
 # 🏗️ Complete C++ Shared DLL Project with Conan & CMake
 
 ## Why Use This?
@@ -122,3 +128,6 @@ On Windows, make sure `mylib.dll` is in the same directory as `app.exe` or in yo
 💡 **Pro Tip:**
 - Use Conan and CMake together for portable, automated DLL builds.
 - Package your DLL with `conan create .` for easy reuse in other projects or teams!
+
+
+

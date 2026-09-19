@@ -1,3 +1,9 @@
+---
+title: "🐼 Usecase: Data Analysis with `pandas`"
+aliases:
+  - "🐼 Usecase: Data Analysis with `pandas`"
+---
+
 # 🐼 Usecase: Data Analysis with `pandas`
 
 If you're going to do any kind of data analysis or data science in Python, **pandas** is the first tool you'll reach for. It is the undisputed king of data manipulation in Python, providing fast, flexible, and expressive data structures designed to make working with structured ("tabular") data like spreadsheets or SQL tables intuitive and easy.
@@ -62,3 +68,6 @@ df.to_excel("people.xlsx", index=False)
 # Use .apply for custom functions
 # Use .merge for joining DataFrames
 ```
+
+
+

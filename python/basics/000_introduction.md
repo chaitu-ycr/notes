@@ -1,3 +1,9 @@
+---
+title: "🐍 000: Your First Steps in Python"
+aliases:
+  - "🐍 000: Your First Steps in Python"
+---
+
 # 🐍 000: Your First Steps in Python
 
 Welcome to the very beginning of your Python journey! 🎉 This is where you'll learn the absolute essentials—the building blocks that make up every Python program. Think of it as learning the alphabet before you start writing stories.
@@ -131,3 +137,6 @@ except ValueError:
 ---
 
 This is just the tip of the iceberg, but with these concepts, you're well on your way to writing powerful Python programs. Keep practicing, and don't be afraid to experiment! 🧪
+
+
+

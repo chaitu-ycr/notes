@@ -1,3 +1,9 @@
+---
+title: "🎁 015: Decorators"
+aliases:
+  - "🎁 015: Decorators"
+---
+
 # 🎁 015: Decorators
 
 Imagine you have several functions, and for each one, you need to log when it starts and when it finishes. You could add `print()` statements at the beginning and end of every function, but that's repetitive and clutters up your core logic.
@@ -154,3 +160,6 @@ def message():
     return "System running."
 print(message())
 ```
+
+
+

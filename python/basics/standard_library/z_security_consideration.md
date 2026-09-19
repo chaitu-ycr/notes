@@ -1,3 +1,9 @@
+---
+title: "Security Considerations in Python Standard Library"
+aliases:
+  - "Security Considerations in Python Standard Library"
+---
+
 # Security Considerations in Python Standard Library
 
 Certain Python standard library modules have specific security considerations. Review the notes below for each module and general Python security options.
@@ -30,3 +36,6 @@ Certain Python standard library modules have specific security considerations. R
 - If `-I` cannot be used, use the `-P` option or set the `PYTHONSAFEPATH` environment variable to avoid prepending unsafe paths (current directory, script’s directory, or empty string) to `sys.path`.
 
 ---
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "🚀 Usecase: Building Web Apps with `streamlit`"
+aliases:
+  - "🚀 Usecase: Building Web Apps with `streamlit`"
+---
+
 # 🚀 Usecase: Building Web Apps with `streamlit`
 
 You've written a Python script to analyze a dataset, visualize some results, or make predictions with a model. Now, how do you share it? You could ask people to run your script, but a web app is much more user-friendly. The problem is, building web apps is usually complex.
@@ -55,3 +61,6 @@ if uploaded:
 # Use st.button, st.checkbox, st.radio for more interactivity
 # Use Streamlit Community Cloud for free deployment
 ```
+
+
+

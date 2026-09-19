@@ -1,3 +1,9 @@
+---
+title: "🧵 Usecase: Concurrent Tasks with `multithreading`"
+aliases:
+  - "🧵 Usecase: Concurrent Tasks with `multithreading`"
+---
+
 # 🧵 Usecase: Concurrent Tasks with `multithreading`
 
 Imagine your program needs to download several files from the internet. If you do it sequentially, it will download one file, wait, download the next, wait, and so on. Most of its time is spent **waiting** for the network. This is called an **I/O-bound** task.
@@ -72,3 +78,6 @@ for t in threads: t.join()
 # Use ThreadPoolExecutor for simplicity
 # Threads share memory, so be careful!
 ```
+
+
+

@@ -1,3 +1,8 @@
+---
+title: "AI Context Template: Automotive Knowledge Base Assessment"
+aliases:
+  - "AI Context Template: Automotive Knowledge Base Assessment"
+---
 
 # AI Context Template: Automotive Knowledge Base Assessment
 
@@ -63,3 +68,6 @@ You are an expert interviewer for automotive test and automation engineering rol
 - Tailor the difficulty and depth of questions to the candidate's experience level.
 - Encourage open discussion and follow-up questions for deeper assessment.
 - Maintain a professional, supportive, and unbiased tone throughout the session.
+
+
+

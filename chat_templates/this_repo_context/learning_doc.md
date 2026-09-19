@@ -1,3 +1,9 @@
+---
+title: "🎯 Topic: [Insert Catchy Title Here]"
+aliases:
+  - "🎯 Topic: [Insert Catchy Title Here]"
+---
+
 # 🎯 Topic: [Insert Catchy Title Here]
 
 **Tags:** `[Tag1]`, `[Tag2]`, `[Python/Automotive/Tool]`
@@ -61,5 +67,8 @@ magic_function()
 ---
 
 ## 📚 References
-- [Official Docs](link)
-- [StackOverflow Discussion](link)
+- [Official Docs](https://docs.python.org/3/)
+- [StackOverflow Discussion](https://stackoverflow.com/)
+
+
+

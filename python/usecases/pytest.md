@@ -1,3 +1,9 @@
+---
+title: "🧪 Usecase: Writing Tests with `pytest`"
+aliases:
+  - "🧪 Usecase: Writing Tests with `pytest`"
+---
+
 # 🧪 Usecase: Writing Tests with `pytest`
 
 Writing code is one thing, but how can you be sure it actually works correctly? And more importantly, how can you be sure it *keeps* working correctly after you make changes? The answer is **automated testing**, and `pytest` is the most popular, powerful, and Pythonic framework for doing it.
@@ -59,3 +65,6 @@ def test_tmp_file(tmp_path):
 # Use pytest.raises for error checks
 # Use plugins for coverage, async, web, etc.
 ```
+
+
+

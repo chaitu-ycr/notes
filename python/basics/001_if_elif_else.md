@@ -1,3 +1,9 @@
+---
+title: "🚦 001: Making Decisions with `if`, `elif`, and `else`"
+aliases:
+  - "🚦 001: Making Decisions with `if`, `elif`, and `else`"
+---
+
 # 🚦 001: Making Decisions with `if`, `elif`, and `else`
 
 Computers are great at following instructions, but they're even more powerful when they can make decisions. This is where Python's `if`, `elif`, and `else` statements come in. They are the tools you'll use to control the flow of your programs.
@@ -78,3 +84,6 @@ y = 7
 if 5 < y < 10:
     print("y is between 5 and 10")
 ```
+
+
+

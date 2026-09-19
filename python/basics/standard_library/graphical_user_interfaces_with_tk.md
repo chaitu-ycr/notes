@@ -1,3 +1,9 @@
+---
+title: "Python Graphical User Interfaces with Tk"
+aliases:
+  - "Python Graphical User Interfaces with Tk"
+---
+
 # Python Graphical User Interfaces with Tk
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to GUI development with Tk.
@@ -156,3 +162,6 @@ turtle.done()
 ```
 
 ---
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "Python File and Directory Access Modules"
+aliases:
+  - "Python File and Directory Access Modules"
+---
+
 # Python File and Directory Access Modules
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to file and directory access.
@@ -139,3 +145,6 @@ shutil.copy('file1.txt', 'file2.txt')  # Copy file1.txt to file2.txt
 ```
 
 ---
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "🍳 Custom Conan Recipe Example"
+aliases:
+  - "🍳 Custom Conan Recipe Example"
+---
+
 # 🍳 Custom Conan Recipe Example
 
 ## Why Use This?
@@ -62,3 +68,6 @@ Make sure you have added and authenticated to your remote first.
 
 💡 **Pro Tip:**
 - You can share your package privately or publish to Conan Center for global reuse!
+
+
+

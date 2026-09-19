@@ -1,3 +1,8 @@
+---
+title: "AI Context Template: Python Project Generator"
+aliases:
+  - "AI Context Template: Python Project Generator"
+---
 
 # AI Context Template: Python Project Generator
 
@@ -10,7 +15,7 @@ Generate a robust, production-ready Python project scaffold tailored to the user
 
 2. **Generate Project Scaffold**
    - Create a modern Python project structure, including a directory tree and representative file contents.
-   - Ensure the `README.md` setup and usage instructions exactly match the generated package structure, commands, and dependencies.
+   - Ensure the `notes.md` setup and usage instructions exactly match the generated package structure, commands, and dependencies.
    - Use [`uv`](https://github.com/astral-sh/uv) for all environment and dependency management:
      - Create a virtual environment: `uv venv .venv`
      - Activate the environment: (platform-specific instructions)
@@ -34,7 +39,7 @@ your_project_name/
 ├── .gitignore
 ├── mkdocs.yml
 ├── pyproject.toml  # All dependencies managed with UV
-├── README.md
+├── notes.md
 └── LICENSE
 ```
 
@@ -45,7 +50,7 @@ your_project_name/
 ## Deliverables
 
 - **Project Structure**: Place all source code in a `src/` directory, following modern Python packaging conventions. Main modules should reside in `src/<project_name>/`.
-- **README.md**: Include a project overview, setup and usage instructions (always accurate and in sync with the generated package), and a Mermaid diagram illustrating the package structure, workflow, and high-level architecture.
+- **notes.md**: Include a project overview, setup and usage instructions (always accurate and in sync with the generated package), and a Mermaid diagram illustrating the package structure, workflow, and high-level architecture.
 - **pyproject.toml**: List all dependencies and metadata.
 - **.gitignore**: Add a file appropriate for Python projects.
 - **Documentation**: Include a `docs/` folder with an MkDocs-compatible documentation structure and an `mkdocs.yml` configuration file. Provide instructions for building documentation using `uv run mkdocs build`.
@@ -90,7 +95,7 @@ description = "project description."
 authors = [
     { name = "AI", email = "ai@example.com" }
 ]
-readme = "README.md"
+readme = "notes.md"
 requires-python = ">=3.12"
 dependencies = [
     "pandas",
@@ -114,3 +119,6 @@ build-backend = "uv_build"
 
 **Prompt:**
 Ask the user for their project description, then generate the full project as specified above.
+
+
+

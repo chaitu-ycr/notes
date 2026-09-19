@@ -1,3 +1,9 @@
+---
+title: "Python Numeric and Mathematical Modules"
+aliases:
+  - "Python Numeric and Mathematical Modules"
+---
+
 # Python Numeric and Mathematical Modules
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to numeric and mathematical operations.
@@ -110,3 +116,6 @@ print(statistics.median(data)) # 3
 ```
 
 ---
+
+
+

@@ -1,3 +1,9 @@
+---
+title: "Python Multimedia Services Modules"
+aliases:
+  - "Python Multimedia Services Modules"
+---
+
 # Python Multimedia Services Modules
 
 Below are detailed descriptions and usage examples for key Python standard libraries related to multimedia services.
@@ -45,3 +51,6 @@ print(r2, g2, b2)
 ```
 
 ---
+
+
+

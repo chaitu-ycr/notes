@@ -1,3 +1,9 @@
+---
+title: "🤖 Copilot Chat Context Template"
+aliases:
+  - "🤖 Copilot Chat Context Template"
+---
+
 # 🤖 Copilot Chat Context Template
 
 Use this template when starting new conversations with GitHub Copilot for documentation work.
@@ -242,4 +248,7 @@ Now you have templates that will help Copilot understand your repo's personality
 ---
 
 *Remember: This repo celebrates practical learning through creativity!*
+
+
+
 

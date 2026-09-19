@@ -1,3 +1,8 @@
+---
+title: "AI Context Template: LinkedIn Poster Generator"
+aliases:
+  - "AI Context Template: LinkedIn Poster Generator"
+---
 
 # AI Context Template: LinkedIn Poster Generator
 
@@ -73,3 +78,6 @@ You are a creative social media strategist and content creator, skilled at makin
 - **Title:** [Title for the Final Page]
 - **Message:** [A clear call to action. Ask a question, encourage comments, or direct them to a link.]
 - **Visual:** [Suggestion for a visual, e.g., "An icon of a speech bubble or a pointing finger"]
+
+
+

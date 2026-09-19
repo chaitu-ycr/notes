@@ -1,3 +1,9 @@
+---
+title: "🚀 Quick Reference: Repository & Style Guide"
+aliases:
+  - "🚀 Quick Reference: Repository & Style Guide"
+---
+
 # 🚀 Quick Reference: Repository & Style Guide
 
 A one-page cheat sheet for maintaining consistency across your learning documentation.
@@ -60,7 +66,7 @@ A one-page cheat sheet for maintaining consistency across your learning document
 ├── 000_introduction.md       # Roadmap + why this matters
 ├── 001_concept.md             # Concept + examples + gotchas
 ├── 002_next_concept.md        # Build on previous
-└── README.md                  # "Start here" guide
+└── notes.md                  # "Start here" guide
 ```
 
 ### Usecases/Frameworks
@@ -74,7 +80,7 @@ A one-page cheat sheet for maintaining consistency across your learning document
 ### Automotive Topics
 ```
 /CAN/
-├── README.md                  # What is it? Real scenario
+├── notes.md                  # What is it? Real scenario
 ├── message_structure.md       # Hex values, bit layouts, examples
 ├── examples/                  # Working message examples
 ├── images/                    # Diagrams, timing flows
@@ -238,4 +244,7 @@ Your repo does all three. Keep it that way! 🚀
 - 📖 Full context: `.copilot-instructions.md`
 - 💬 Chat templates: `.github/COPILOT_CONTEXT.md`
 - 📂 Structure guide: This file (`.github/QUICK_REFERENCE.md`)
+
+
+
 
