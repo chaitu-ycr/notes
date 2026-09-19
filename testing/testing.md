@@ -23,8 +23,6 @@ This guide, based on the comprehensive ISTQB syllabus, will walk you through the
 
 Before we dive deep, let's start with the basics. This section covers the fundamental concepts of testing: what it is, why we do it, and the core principles that guide every successful testing effort.
 
-<details>
-<summary>Expand</summary>
 
 ### 1.1 The Testing Landscape (Mindmap)
 
@@ -48,14 +46,14 @@ graph TD
   principles --> p5["Testing is context-dependent"]
 
   %% Test levels
-  root --> levels["Test Levels (The \"When\")"]
+  root --> levels["Test Levels (The When)"]
   levels --> L1["Component (Unit) Testing"]
   levels --> L2["Integration Testing"]
   levels --> L3["System Testing"]
   levels --> L4["Acceptance Testing (UAT)"]
 
   %% Test types
-  root --> types["Test Types (The \"What\")"]
+  root --> types["Test Types (The What)"]
   types --> functional["Functional"]
   functional --> bb["Black-Box Techniques"]
   bb --> ep["Equivalence Partitioning"]
@@ -123,14 +121,10 @@ Testing assesses and improves software quality by discovering defects, verifying
 - Whole team approach: everyone is responsible for quality
 - Independence in testing: multiple levels (author, peer, independent team, external)
 
-</details>
-
 ## 3. 🔬 The Testing Toolkit: Levels & Types
 
 To test effectively, we need the right tools for the job. This section explores the different **levels** of testing (from tiny components to the whole system) and the different **types** of testing (from checking functions to checking performance).
 
-<details>
-<summary>Expand</summary>
 
 ### 3.1 Test Levels
 
@@ -160,12 +154,8 @@ To test effectively, we need the right tools for the job. This section explores 
 - Corrective, adaptive, performance/maintainability improvements
 - Impact analysis determines test scope
 
-</details>
-
 ## 5. 🛠️ How to Test? A Tour of Test Techniques
 
-<details>
-<summary>Expand</summary>
 
 ### 5.1 Black-Box Techniques
 
@@ -192,14 +182,10 @@ To test effectively, we need the right tools for the job. This section explores 
 
 - Error guessing, exploratory testing, checklist-based testing
 
-</details>
-
 ## 7. 📈 Steering the Ship: Test Management Essentials
 
 A successful testing effort needs a plan. Test management is the art of planning, organizing, and controlling the testing process to ensure it's efficient, effective, and aligned with project goals.
 
-<details>
-<summary>Expand</summary>
 
 ### 7.1 Test Artifacts
 
@@ -217,7 +203,7 @@ A successful testing effort needs a plan. Test management is the art of planning
 
 ```mermaid
 graph TD
-    A[Unit Tests]  B[Service/Integration Tests]  C[UI/End-to-End Tests]
+  A[Unit Tests] --> B[Service/Integration Tests] --> C[UI/End-to-End Tests]
 ```
 
 - Lower layers: fast, isolated, many tests
@@ -232,12 +218,8 @@ graph TD
 | Q3       | Business, Critique| Exploratory, UAT, Usability  | Manual, acceptance tests  |
 | Q4       | Tech, Critique    | Non-functional, Smoke        | Performance, security     |
 
-</details>
-
 ## 9. 📊 Keeping Score: Test Monitoring & Reporting
 
-<details>
-<summary>Expand</summary>
 
 ### 9.1 Metrics
 
@@ -250,12 +232,8 @@ graph TD
 - Test Progress Reports: Ongoing, for control
 - Test Completion Reports: At milestones, for summary
 
-</details>
-
 ## 11. 🐞 Bug Hunt: Defect Management
 
-<details>
-<summary>Expand</summary>
 
 ### 11.1 Defect Lifecycle
 
@@ -270,12 +248,8 @@ graph TD
 
 - Defect management process: log, analyze, classify, resolve, close
 
-</details>
-
 ## 13. 🚗 A Special Case: Automotive Software Testing
 
-<details>
-<summary>Expand</summary>
 
 ### 13.1 Standards
 
@@ -289,14 +263,14 @@ graph TD
 
 ```mermaid
 graph TD
-    A[Concept]  B[Development]  C[Production]  D[Utilization]  E[Support]  F[Retirement]
+  A[Concept] --> B[Development] --> C[Production] --> D[Utilization] --> E[Support] --> F[Retirement]
 ```
 
 ### 13.3 XiL Environments
 
 ```mermaid
 graph TD
-    MiL[Model-in-the-Loop]  SiL[Software-in-the-Loop]  HiL[Hardware-in-the-Loop]
+  MiL[Model-in-the-Loop] --> SiL[Software-in-the-Loop] --> HiL[Hardware-in-the-Loop]
 ```
 
 | Environment | Use Case                    | Timing         |
@@ -335,8 +309,6 @@ graph TD
 |------------|------------------------------------------------|------------------------------|-----------------|
 | ISO 26262  | Avoid risks from systematic/hardware failures  | E/E system requirements      | ASIL level      |
 | ASPICE     | Assess process capability                      | Process assessment           | Not on ASIL     |
-
-</details>
 
 ---
 
